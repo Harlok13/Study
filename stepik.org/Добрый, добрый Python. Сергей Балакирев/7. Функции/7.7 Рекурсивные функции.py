@@ -82,13 +82,25 @@ def rec(word):
     return f'{word[0]}({rec(word[1:-1])}){word[-1]}'
 
 
-print(rec('простострока'))
+print(rec('anything'))
 
 
 def rec(word):
-    if len(word) == 1 or len(word) == 0:
+    """
+    Дана строка, содержащая только английские буквы, необходимо
+    между каждой буквой поставить звездочку.
+
+    """
+    if len(word) == 2:
+
+        return word[0] + '*' + word[-1]
+
+    if len(word) == 1:
+
         return word
-    return f'{word[0]}*{rec(word[1:-1])}*{word[-1]}'
+
+    return word[0] + '*' + rec(word[1:-1]) + '*' + word[-1]
 
 
-print(rec('тожестрока'))
+
+print(rec('sentence'))
