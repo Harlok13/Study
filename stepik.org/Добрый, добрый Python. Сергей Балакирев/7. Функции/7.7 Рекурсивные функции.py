@@ -92,15 +92,10 @@ def rec(word):
 
     """
     if len(word) == 2:
-
-        return word[0] + '*' + word[-1]
-
+        return f'{word[0]}*{word[-1]}'
     if len(word) == 1:
-
         return word
-
-    return word[0] + '*' + rec(word[1:-1]) + '*' + word[-1]
-
+    return f'{word[0]}*{rec(word[1:-1])}*{word[-1]}'
 
 
 print(rec('sentence'))
