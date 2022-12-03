@@ -1,4 +1,6 @@
-def foo(x):
-    return x ** 2
-num_list = [2, 5, 6 ,3]
-print([y for i in num_list if (y := foo(i)) < 20])
+DataBase:
+    pk = 1
+    title = 'Классы и объекты'
+    author = 'Сергей Балакирев'
+    views = 14356
+    comments = 12
