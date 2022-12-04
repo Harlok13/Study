@@ -1,6 +1,7 @@
 d = [1, 2, [True, False], ["Москва", "Уфа", [100, 101], ['True', [-2, -1]]], 7.89]
 def get_line_list(d, a=[]):
     """
+    one-dimensional list
 
     :param d: nested list
     :param a: default list
