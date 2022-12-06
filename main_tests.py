@@ -1,8 +1,7 @@
-lst_in = ['0230',
-'0456',
-'789',
-'1023456789']
-gen = (list(i) for i in lst_in)
+fields = ('id', 'title', 'pages')
+lst_value = [10, 'Название', 512]
+if len(lst_value) == 3:
+    z = zip(fields, lst_value)
 
-
-print(True for i in lst_in if lst_in[0][0] in list(gen))
+for k, v in z:
+    print(k, v)

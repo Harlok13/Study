@@ -1,11 +1,20 @@
 import sys
+"""
 
+self.__dict__.update(zip(fields, lst_values))
+"""
 # здесь объявляется класс StreamData
 class StreamData:
 
     def create(self, fields, lst_value):
-        self.fields = fields
-        self.lst_value = lst_value
+        if len(lst_value) == 3:
+            z = zip(fields, lst_value)
+            for k, v in z:
+                setattr(self, k, v)
+            return True
+        else:
+            return False
+
 class StreamReader:
     FIELDS = ('id', 'title', 'pages')
 
