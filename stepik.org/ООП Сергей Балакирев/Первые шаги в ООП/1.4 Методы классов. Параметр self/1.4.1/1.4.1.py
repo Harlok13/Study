@@ -19,3 +19,11 @@ media2.open('filemedia2')
 
 media1.play()
 media2.play()
+
+"""
+Можно реализовать перебор
+
+for i, m in enumerate((MediaPlayer() for _ in '..'), 1):
+    m.open(f'filename{i}')
+    m.play()
+"""
