@@ -23,7 +23,6 @@ class DataBase:
         """Добавляет в lst_data новый словарь"""
         return self.lst_data_update(data)
 
-    # здесь добавлять методы
 
 
 db = DataBase()
