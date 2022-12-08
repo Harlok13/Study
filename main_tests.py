@@ -1,6 +1,4 @@
 
+a = 1.5
 
-d = {'leaf': ['лист'], 'river': ['река'], 'go': ['идти', 'ехать', 'ходить'], 'milk': ['молоко']}
-
-print('ехать' in d['go'])
-print(d.values())
+print(type(a) in (int, float))

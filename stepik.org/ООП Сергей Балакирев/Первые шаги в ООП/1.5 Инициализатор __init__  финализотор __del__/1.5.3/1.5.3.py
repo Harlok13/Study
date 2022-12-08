@@ -1,3 +1,12 @@
+"""
+Решено самостоятельно
+
+Создается список из 217 рандомных экземпляров 3 классов
+с рандомными координатами
+К экземплярам класса Line применяется метод reset_coords,
+который обнуляет координаты
+"""
+
 from random import choice, randint as r, seed
 
 class Figure:
@@ -28,7 +37,7 @@ class Ellipse(Figure):
     pass
 
 
-cls_lst = [Line, Rect, Ellipse]
+cls_lst = (Line, Rect, Ellipse)
 # seed(1) не нужен в этом решении, странно
 elements = [choice(cls_lst)(r(1, 100), r(1, 100), r(1, 100), r(1, 100)) for i in range(217)]
 
