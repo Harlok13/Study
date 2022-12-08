@@ -14,12 +14,13 @@ if max(coord) > (sum(coord)-max(coord))
 """
 
 class TriangleChecker:
-
+    """Проверщик треугольника"""
     def __init__(self, a, b, c):
         self.a, self.b, self.c = a, b, c
 
 
     def is_triangle(self):
+        """Проверка валидности построения треугольника"""
         a, b, c = self.a, self.b, self.c
         if not (type(a) in (int, float)) or not (type(b) in (int, float)) or not (type(c) in (int, float)):
             return 1
