@@ -16,16 +16,17 @@ class Point:
         return self.color
 
 
-points = [Point(i, i) for i in range(1, 2001, 2)]
+points = [Point(i, i) for i in range(1, 2000, 2)]
 points[1].color = 'yellow'
+
+
+
+
+
 
 print(len(points), points[1], sep='\n')
 
 print(points[1].__dict__)
-
-
-
-
 
 
 p1 = Point(10, 20)
