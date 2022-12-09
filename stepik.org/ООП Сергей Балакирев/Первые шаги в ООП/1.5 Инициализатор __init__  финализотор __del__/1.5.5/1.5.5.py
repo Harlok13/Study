@@ -12,7 +12,7 @@ class Graph:
 
     def set_data(self, data):
         """Передача нового списка данных"""
-        self.data = data
+        self.data = data.copy()
 
 
     def show_table(self):
