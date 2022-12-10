@@ -13,3 +13,6 @@
 
 ### Ссылка на стандартную библиотеку Python:
 [The Python Standard Library](https://docs.python.org/3/library/index.html)
+
+1.5.5 Инициализатор __init__ 
+дописать декоратор

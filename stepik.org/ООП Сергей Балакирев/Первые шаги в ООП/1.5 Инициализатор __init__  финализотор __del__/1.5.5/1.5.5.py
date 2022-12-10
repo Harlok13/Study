@@ -1,7 +1,9 @@
 """
 Решено самостоятельно
 
+костыльный декоратор
 """
+
 
 class Graph:
 
@@ -9,35 +11,28 @@ class Graph:
         self.data = data.copy()
         self.is_show = True
 
+    def check_view(func):
+        """Декоратор валидации"""
+        return lambda self: func(self) if self.is_show else print('Отображение данных закрыто')
 
     def set_data(self, data):
         """Передача нового списка данных"""
         self.data = data.copy()
 
-
+    @check_view
     def show_table(self):
         """Отображение данных в виде строки"""
-        if self.is_show:
-            print(*self.data)
-        else:
-            print('Отображение данных закрыто')
+        print(*self.data)
 
-
+    @check_view
     def show_graph(self):
         """Отображение данных в виде графика"""
-        if self.is_show:
-            print('Графическое отображение данных:', *self.data)
-        else:
-            print('Отображение данных закрыто')
+        print('Графическое отображение данных:', *self.data)
 
-
+    @check_view
     def show_bar(self):
         """Отображение данных в виде столбчатой диаграммы"""
-        if self.is_show:
-            print('Столбчатая диаграмма:', *self.data)
-        else:
-            print('Отображение данных закрыто')
-
+        print('Столбчатая диаграмма:', *self.data)
 
     def set_show(self, fl_show):
         """Изменение локального свойства"""

@@ -1,8 +1,24 @@
-from random import randint as r
-a, b, c = 1, 2, 3
-lst = [1, 2, 3]
-ma = max(lst)
-mi = min(lst)
-print(set([f'{r(mi, ma)}{r(mi, ma)}{r(mi, ma)}' for i in range(333)]))
+t = {'ё': 'yo', 'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh',
+     'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p',
+     'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh',
+     'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'}
+
+
+def dec(chars=' !?'):
+    def outer(func):
+        def wrapper(*args, **kwargs):
+            return func(*args, **kwargs).replace(chars, '-').replace('---', '-').replace('--', '-')
+
+        return wrapper
+    return outer
+
+
+@dec()
+def translit(s):
+    """Транслит строки"""
+    return ''.join([t.get(i, i) for i in s.lower()])
+
+
+print(translit('простЩчков ап! R???--- !?'))
 
 
