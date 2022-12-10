@@ -3,6 +3,7 @@ def get_strip(func):
     """Удаление лишних символов"""
     def wrapper(*args, **kwargs):
         return ''.join(func(*args, **kwargs)).replace('---', '-').replace('--', '-').rstrip('-').lstrip('-')
+
     return wrapper
 
 

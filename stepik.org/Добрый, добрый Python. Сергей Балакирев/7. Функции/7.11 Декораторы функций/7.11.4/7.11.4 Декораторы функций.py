@@ -2,6 +2,7 @@
 def get_dic(func):
     def wrapper(*args, **kwargs):
         return dict(zip(*func(*args, **kwargs)))
+
     return wrapper
 
 
