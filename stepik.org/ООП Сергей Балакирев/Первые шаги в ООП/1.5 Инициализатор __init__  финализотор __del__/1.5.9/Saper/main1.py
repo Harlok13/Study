@@ -1,6 +1,6 @@
 class Cell:
     """Игровая клетка"""
-    def __init__(self, around_mines: int=0, mine: bool=False):
+    def __init__(self, around_mines: int = 0, mine: bool = False):
         self.around_mines = around_mines
         self.mine = mine  # Наличие мины в клетке
         self.fl_open = False  # Открыта или закрыта клетка
@@ -11,7 +11,7 @@ class Cell:
 
 class GamePole:
     """Игровое поле"""
-    def __init__(self, N: int, M: int=0):
+    def __init__(self, N: int, M: int = 0):
         self.N = N
         self.M = M
         self.pole = [[Cell() for i in range(self.N)] for j in range(self.N)]
