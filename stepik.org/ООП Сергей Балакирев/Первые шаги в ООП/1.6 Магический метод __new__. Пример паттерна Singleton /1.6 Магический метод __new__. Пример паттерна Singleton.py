@@ -10,6 +10,7 @@ __instance - ссылка на экземпляр класса. Позволит
 аргумент это cls
 """
 
+
 class Point:
     def __new__(cls, *args, **kwargs):
         print('вызов __new__ для' + str(cls))
@@ -20,8 +21,10 @@ class Point:
         self.x = x
         self.y = y
 
+
 pt = Point(1, 2)
 print(pt)
+
 
 ################
 
@@ -51,7 +54,7 @@ class DataBase:
     def read(self):
         return 'данные из БД'
 
-    def write(self,data):
+    def write(self, data):
         print(f'запись в БД {data}')
 
 
