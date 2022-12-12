@@ -6,16 +6,24 @@
 
 
 class Factory:
-    def build_sequence(self):
-        self.lst = []
-        return self.lst
+    @staticmethod
+    def build_sequence():
+        """Creating an empty list"""
+        return []
 
-    def build_number(self, string: str) -> float:
-        return float(string)
+    @staticmethod
+    def build_number(string: str) -> float:
+        """Converting float from string"""
+        try:
+            return float(string)
+        except ValueError:
+            print('invalid string format')
 
 
 class Loader:
-    def parse_format(self, string: str, factory: Factory) -> list:
+    @staticmethod
+    def parse_format(string: str, factory: Factory) -> list:
+        """Creating list of float from string"""
         seq = factory.build_sequence()
         for sub in string.split(","):
             item = factory.build_number(sub)
