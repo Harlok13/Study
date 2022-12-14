@@ -1,4 +1,9 @@
-def basic_op(operator, value1, value2):
-    return eval('value1 *operator value2')
+from re import fullmatch
 
-print(basic_op('+', 4, 5))
+
+def count_smileys(arr):
+    return len([i for i in arr if fullmatch(r'[:;][-~]?[\)D]', i)])
+
+
+arr = [';D', ':-(', ':-)', ';~)']
+print(count_smileys(arr))
