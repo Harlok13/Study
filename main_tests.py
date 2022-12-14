@@ -1,9 +1,8 @@
-from re import fullmatch
+from collections import Counter
 
 
-def count_smileys(arr):
-    return len([i for i in arr if fullmatch(r'[:;][-~]?[\)D]', i)])
+def duplicate_count(text):
+    res = Counter(text.lower())
+    return res
 
-
-arr = [';D', ':-(', ':-)', ';~)']
-print(count_smileys(arr))
+print(duplicate_count('aabBcde'))
