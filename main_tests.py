@@ -1,4 +1,4 @@
-a = 17 // (23 % 7)
-b = 34 % a * 5 - 29 % 4 * 3
-print(34 % a * 5)
+from math import sqrt
+
+print(sqrt(40))
 
