@@ -1,3 +1,7 @@
+"""
+Приватный метод необязателен
+"""
+
 class Car:
     # def __init__(self, model):
     #     self.__model = None
