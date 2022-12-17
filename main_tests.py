@@ -1,1 +1,10 @@
-result = {i: pow(i, 2) for i in range(15)}
+def two_sum(numbers, target):
+    d = {}
+    for k, v in enumerate(numbers):
+
+
+
+        return
+
+
+print(two_sum([1, 2, 3], 4))
