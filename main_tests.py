@@ -1,18 +1,7 @@
-import math
-from pprint import pprint, pformat
-
-s = """
-Потом сосны отступили, рассвело – и перед Таней открылся огромный мир: от одного его
-края до другого шла широкая песчаная лента, за ней зеленело плоское море, а сверху 
-этот мир был накрыт небом, о глубине которого можно было только догадываться по кажущимся крохотными облакам.
-Проведя Таню через лес, папа отпустил её руку и пошёл мочить ступни в спокойной воде. 
-Ветер дул Тане в лицо, как дуют на царапину, чтобы не болело; но у Тани болело.
-"""
-pprint(s.replace('\n', ''), width=40)
-
-
-def format_str(s):
-    return pformat(s.replace('\n', '').strip(' '), width=40, compact=True)
-
-
-print(format_str(s))
+def sum_strings(x, y):
+    l, res, carry = max(len(x), len(y)), "", 0
+    x, y = x.zfill(l), y.zfill(l)
+    for i in range(l-1, -1, -1):
+        carry, d = divmod(int(x[i]) + int(y[i]) + carry, 10)
+        res += str(d)
+    return ("1" * carry + res[::-1]).lstrip("0") or "0"
