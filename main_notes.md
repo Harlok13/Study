@@ -17,3 +17,5 @@ solve()
 
 import itertools
 float('-inf')
+
+ljust()

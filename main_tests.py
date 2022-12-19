@@ -1,22 +1,18 @@
-class MyClass:
-    def __init__(self, var):
-        self.var = var
+import math
+from pprint import pprint, pformat
 
-    @property
-    def var(self):
-        return self.__var
-
-    @var.setter
-    def var(self, value):
-        if self.__validate(value):
-            self.__var = value
-
-
-    @staticmethod
-    def __validate(value):
-        return type(value) == int
+s = """
+Потом сосны отступили, рассвело – и перед Таней открылся огромный мир: от одного его
+края до другого шла широкая песчаная лента, за ней зеленело плоское море, а сверху 
+этот мир был накрыт небом, о глубине которого можно было только догадываться по кажущимся крохотными облакам.
+Проведя Таню через лес, папа отпустил её руку и пошёл мочить ступни в спокойной воде. 
+Ветер дул Тане в лицо, как дуют на царапину, чтобы не болело; но у Тани болело.
+"""
+pprint(s.replace('\n', ''), width=40)
 
 
+def format_str(s):
+    return pformat(s.replace('\n', '').strip(' '), width=40, compact=True)
 
-c = MyClass('10')
-print(c.__dict__)
+
+print(format_str(s))
