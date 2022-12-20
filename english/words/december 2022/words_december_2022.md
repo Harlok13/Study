@@ -1,8 +1,7 @@
 **18.12.2022**
 
 **Implement** (v)
-- осуществлять, выполнять, осуществлять, проводить, 
-выполнять, провести, исполнять *[carry out, perform, execute]*
+- осуществлять, проводить, выполнять, провести, исполнять *[carry out, perform, execute]*
 - снабжать *[provide]*
 - реализовать, реализовывать, воплотить, претворять,
 воплощать, претворить, претворять в жизнь, проводить
@@ -58,5 +57,52 @@ The rising cost of this thing raises concern\
 Again, I share concern\
 И вновь, я разделяю обеспокоенность
 ___
-During
-Behavior
+
+**19.12.2022**
+
+**Considered**
+- признанный, считающийся
+- обдуманный, взвешенный
+
+**Consider** (v)
+- рассматривать, рассмотреть, расценивать, расценить
+- считать, считаться, полагать
+- учитывать, принимать во внимание, учесть
+
+**Considered** (adj)
+- продуманный
+
+This is a carefully considered negotiating position
+Это тщательно продуманная позиция переговоров
+
+I understand my doctors consider my decision to be completely idiotic
+Я понимаю, что мои врачи расценивают мое решение как абсолютно идиотическое
+
+Next time I'll consider it stealing
+В следующий раз я расценю это как воровство
+
+The killer smiled. "Consider it done"
+Считайте уже все сделано, - улыбнулся убийца
+___
+**Instantiate** (v)
+- конкретизировать
+- создать экземпляр, создавать экземпляр
+- проиллюстрировать
+
+**Instantiate** (n)
+- создание экземпляра
+
+Then I instantiate it 
+Затем я создаю его экземпляр
+
+How do I instantiate the array?
+Как я могу создать экземпляр массива?
+
+I need to instantiate the class
+Мне нужно создать экземпляр класса
+
+You cant publicly instantiate it
+Вы не можете создать его публично
+
+
+

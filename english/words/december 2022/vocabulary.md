@@ -1,6 +1,7 @@
 **18.12.2022**
 Hide
 Implement
-Behavior
 Concern
-During
+**19.12.2022**
+Considered
+
