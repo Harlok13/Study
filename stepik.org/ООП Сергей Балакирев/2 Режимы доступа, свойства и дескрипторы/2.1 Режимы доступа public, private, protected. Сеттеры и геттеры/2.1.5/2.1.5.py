@@ -14,15 +14,15 @@ class Rectangle:
 
     def __init__(self, *args):
         if len(args) == 4:
-            self.__sp = (args[0], args[1])
-            self.__ep = (args[2], args[3])
+            self.__sp = (Point(args[0], args[1]))
+            self.__ep = (Point(args[2], args[3]))
         else:
             self.__sp = args[0]
             self.__ep = args[1]
 
     def set_coords(self, sp: Point, ep: Point):
-        self.__sp = sp.get_coords()
-        self.__ep = ep.get_coords()
+        self.__sp = sp
+        self.__ep = ep
 
     def get_coords(self):
         return self.__sp, self.__ep
@@ -34,3 +34,4 @@ class Rectangle:
 rect = Rectangle((0, 0), (20, 34))
 rect.set_coords((25, 25), (35, 35))
 print(rect.get_coords())
+rect.draw()
