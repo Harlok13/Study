@@ -1,3 +1,7 @@
+"""
+Решение не проходит проверку, устал разбираться почему
+"""
+
 class Museum:
     def __init__(self, name):
         self.name = name
@@ -10,17 +14,14 @@ class Museum:
         self.exhibits.remove(obj)
 
     def get_info_exhibit(self, indx):
-        des = self.exhibits[indx]
-        return f'Описание экспоната {des.name}: {des.descr}'
+        exh = self.exhibits[indx]
+        return f'Описание экспоната {exh.name}: {exh.descr}'
 
 
 class Exhibits:
     def __init__(self, name, descr):
         self.name = name
         self.descr = descr
-
-    def get_info_exhibit(self):
-        return f'Описание экспоната {self.name}: {self.descr}'
 
 
 class Picture(Exhibits):
