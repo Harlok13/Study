@@ -31,3 +31,6 @@ if __name__ == '__main__':
 
     for _ in find_gen('abcabab', 'a'):
         pass
+
+    n = (2, 3, 5, 7, -11, 13, 17, 19, 23, 29, 31, -6, 41, 43, 47, 53, 59, 61, -96, 71, 1000, -1)
+    print(__import__('math').prod(n))
