@@ -26,9 +26,21 @@ class Circle:
 
     @radius.setter
     def radius(self, value):
-        self.__radius = value
+        if value > 0:
+            self.__radius = value
 
     def __setattr__(self, key, value):
         if isinstance(value, (int, float)):
             return super().__setattr__(key, value)
+        raise TypeError("Неверный тип присваиваемых данных.")
 
+    def __getattr__(self, item):
+        return False
+
+
+circle = Circle(10.5, 7, 22)
+circle.radius = -10  # прежнее значение не должно меняться, т.к. отрицательный радиус недопустим
+x, y = circle.x, circle.y
+res = circle.name  # False, т.к. атрибут name не существует
+
+print(circle.__dict__)
