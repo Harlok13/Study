@@ -3,7 +3,7 @@ import time
 
 class GeyserClassic:
     MAX_DATE_FILTER = 100
-    slots = {1: [], 2: [], 3: []}
+    slots = {1: None, 2: None, 3: None}
 
     @staticmethod
     def check_slots(slot_num, filter):
@@ -12,21 +12,23 @@ class GeyserClassic:
 
     @classmethod
     def add_filter(cls, slot_num, filter):
-        if cls.slots.get(slot_num, None) == [] and cls.check_slots(slot_num, filter):
-            cls.slots.get(slot_num).append(filter)
+        if cls.slots.get(slot_num, None) is None and cls.check_slots(slot_num, filter):
+            cls.slots[slot_num] = filter
 
     @classmethod
     def remove_filter(cls, slot_num):
-        if cls.slots.get(slot_num, None):
-            cls.slots.get(slot_num).clear()
+        if cls.slots.get(slot_num, None) is not None:
+            cls.slots[slot_num] == None
 
     def get_filters(self):
         return tuple((i for i in self.slots.values()))
 
     def water_on(self):
-        if all([bool(i) for i in self.slots.values()]):
-            if len([i for i in self.slots.values() if i[0].date in range(0, self.MAX_DATE_FILTER + 1)]) == 3:
-                return True
+        sl = [bool(i) for i in self.slots.values()]
+        if all(sl) and len(sl) == 3:
+            slts = [self.slots.get(i) for i in range(1, 4)]
+            # return not all([0 < i.date < self.MAX_DATE_FILTER for i in slts])
+            return len([i for i in slts if 0 <= (i.date - i.date) < self.MAX_DATE_FILTER]) == 3
         return False
 
 
