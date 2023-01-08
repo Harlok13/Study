@@ -19,3 +19,6 @@
 
 ### PyCharm
 [PyCharm features](https://www.jetbrains.com/ru-ru/pycharm/features/coding_assistance.html)
+
+### Линтеры
+[Linter](https://habr.com/ru/company/oleg-bunin/blog/433480/)

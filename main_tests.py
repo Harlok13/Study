@@ -1,8 +1,9 @@
-def foo(*args):
-    assert len(args) != 0, f'Список не должен быть пустым'
-    return round(sum(args) / len(args), 2)
+def find_next_square(sq):
+    # Return the next square if sq is a square, -1 otherwise
+
+    return pow(sq ** .5 + 1, 2) if sq ** .5 == int(sq ** .5) else -1
 
 
 if __name__ == '__main__':
-    print(foo(4, 5, 6))
+    print(find_next_square(121))
 
