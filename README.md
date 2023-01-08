@@ -14,5 +14,8 @@
 ### Ссылка на стандартную библиотеку Python:
 [The Python Standard Library](https://docs.python.org/3/library/index.html)
 
-1.5.5 Инициализатор __init__ 
-дописать декоратор
+### Мини-язык спецификаций форматирования:
+[Common string operations](https://docs.python.org/3/library/string.html#formatspec)
+
+### PyCharm
+[PyCharm features](https://www.jetbrains.com/ru-ru/pycharm/features/coding_assistance.html)

@@ -1,6 +1,8 @@
-from collections import Counter
-def find_secret_message(p):
-    res = dict(Counter(p.lower().replace('.', '').split()))
-    return ' '.join([k for k, v in res.items() if v > 1])
+def foo(*args):
+    assert len(args) != 0, f'Список не должен быть пустым'
+    return round(sum(args) / len(args), 2)
 
-print(find_secret_message('This is a test. this test is fun.'))
+
+if __name__ == '__main__':
+    print(foo(4, 5, 6))
+
