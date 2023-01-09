@@ -282,6 +282,29 @@ img {
 
 }
 
+.wrapper-full {
+    max-width: 1262px;
+    margin 0 auto;
+}
+
+.section__title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section__title::after {
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0 ;
+}
 /* Header styles start */
 
 .header {
@@ -477,4 +500,37 @@ img {
 }
 /* Benefits styles end  */
 
+
+/* Places style start */
+.places__title {
+    margin-right: 15px;
+}
+
+.places__caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.places__view-all {
+    text-decoration: none;
+    font-size: 16px;
+    color: #006DFE;
+    background: url(../svg/arrow-right-ico.svg) no-repeat right center;
+    padding-right: 59px;
+}
+
+.places__view-all:hover, .places__view-all:focus {
+    opacity: .65;
+    transition: .4s ;
+}
+
+.places__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px
+}
+/* Places style start */
 
