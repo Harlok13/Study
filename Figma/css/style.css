@@ -284,7 +284,7 @@ img {
 
 .wrapper-full {
     max-width: 1262px;
-    margin 0 auto;
+    margin: 0 auto;
 }
 
 .section__title {
@@ -473,7 +473,7 @@ img {
 .benefits__card-title {
     font-weight: 500;
     font-size: 18px;
-    line-hei ght: 24px;
+    line-height: 24px;
     margin-bottom: 26px;
 }
 
