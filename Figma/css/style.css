@@ -387,4 +387,50 @@ body {
     background: #1666cf;
     transition: .6s;
 }
+
+.wrapper {
+    padding-bottom: 350px;
+}
+
 /* Intro styles end */
+
+/* Benefits styles start */
+.benefits__wrap {
+    max-width: 1262px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+}
+
+.benefits__title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    padding: 93px 100px 88px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: #FFFFFF;
+}
+
+.benefits__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+    padding: 0 100px
+
+}
+
+.benefits__card {
+    grid-column: span 1;
+}
+
+.benefits__card-pic {
+
+}
+
+/* Benefits styles end  */
+
