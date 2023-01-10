@@ -1,7 +1,5 @@
-def remove_url_anchor(url):
-    if url.find('#') > 0:
-        return url[:url.find('#')]
-    else:
-        return url
+def check_for_factor(base, factor):
+  return factor % base == 0
 
-print(remove_url_anchor('www.codewars.com/katas/'))
+print(check_for_factor(9779, 1))
+print(9779 % 1)
