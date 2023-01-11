@@ -2,6 +2,7 @@
 # операции + - / * возвращает результат выполнения этой операции. Если числа не целые или нет знака операции, то
 # бросать исключение ValueError
 from operator import add, mul, sub, truediv
+"""Путь к файлу с тестами 'tests/calculator_test.py'"""
 
 
 def calculator(expression: str):
@@ -27,5 +28,4 @@ def calculator(expression: str):
             raise ValueError('Выражение должно содержать 2 целых числа и один оператор')
 
 if __name__ == '__main__':
-    print(calculator('3-5'))
-    print(calculator('4+3'))
+    ...

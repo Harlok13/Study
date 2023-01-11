@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from ..calculator import calculator
+from librarys_modules.unittest.examples.calculator import calculator
 
 
 class CalculatorTest(TestCase):
