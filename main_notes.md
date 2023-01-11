@@ -1,7 +1,7 @@
 *a, = 1, 2, 3, ... n
 
 reversed()
-divmod()
+
 ___
 ```
 text = 'footballcyberpunkextraterritorialityconversationalistblockophthalmoscopicinterdependencemamauserfff'
@@ -16,11 +16,14 @@ https://stepik.org/lesson/446696/step/13?thread=solutions&unit=437002 (слов�
 bisect()
 insort()
 solve()
+format()
+ljust()
+divmod()
 
 import itertools
 float('-inf')
 
-ljust()
+
 ___
 ```
 def sum_strings(x, y):

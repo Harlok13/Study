@@ -1,5 +1,4 @@
-def check_for_factor(base, factor):
-  return factor % base == 0
-
-print(check_for_factor(9779, 1))
-print(9779 % 1)
+placeholder = 'placeholder'
+x = [True, 'zzz', 123, True]
+temp = str(x).replace('True', placeholder)
+print(1 in eval(temp))
