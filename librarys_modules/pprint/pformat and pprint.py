@@ -17,3 +17,6 @@ def format_str(s):
 
 
 print(format_str(s))
+
+pprint(format_str(s))
+
