@@ -1,35 +1,32 @@
+import datetime
 import time
+import validate_string as v
+
 
 
 def test_time(func):
-    def wrapper(*args, **kwargs):
-        st = time.time()
-        result = func(*args, **kwargs)
-        et = time.time()
-        dt = et - st
-        print(f"time: {dt} sek")
-        return result
 
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        return_value = func(*args, **kwargs)
+        end = time.time()
+        print('[*] Время выполнения: {} секунд.'.format(end-start))
+        return return_value
     return wrapper
 
 
 @test_time
-def get_lst_app(var: list):
-    lst = []
-    for i in var:
-        lst.append(i)
-    return lst
+def cycle(iter_obj):
+    return [item for item in iter_obj if not (isinstance(item, str) and item.isalpha())]
+
 
 @test_time
-def get_lst_sum(var):
-    lst = []
-    for i in var:
-        lst += [i]
-    return lst
+def filter_(iter_obj):
+    return list(filter(lambda item: not (isinstance(item, str) and item.isalpha()), iter_obj))
 
 
+if __name__ == '__main__':
 
-*var, = range(100000000)
-res1 = get_lst_app(var)
-res2 = get_lst_sum(var)
-print(res1, res2)
+
+    res1 = cycle(v.list_in)
+    res2 = filter_(v.list_in)
