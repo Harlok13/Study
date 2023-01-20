@@ -1,6 +1,6 @@
 import datetime
 import time
-import validate_string as v
+
 
 
 
@@ -14,19 +14,27 @@ def test_time(func):
         return return_value
     return wrapper
 
+# @test_time
+# def sum_of_pay(s: str) -> int:  # '2 2 2 2 2 2 2 3 3 3 3 3'
+#     all_product = list(map(int, s.split()))
+#     price_of_1 = set(all_product)
+#     dict_of_count_goods = {product: all_product.count(product) for product in price_of_1}  # {2: 7, 3: 5}
+#     d = dict_of_count_goods
+#     total_cost = [divmod(d.get(product), 3) + (product,) for product in price_of_1]  # [(2, 1, 2), (1, 2, 3)]
+#     res_sum = 0
+#     for discount, non_discount, price in total_cost:
+#         res_sum += discount * (price * 2) + non_discount * price
+#     return res_sum
 
 @test_time
-def cycle(iter_obj):
-    return [item for item in iter_obj if not (isinstance(item, str) and item.isalpha())]
-
-
-@test_time
-def filter_(iter_obj):
-    return list(filter(lambda item: not (isinstance(item, str) and item.isalpha()), iter_obj))
+def sum_of_pay(s: str) -> int:  # '2 2 2 2 2 2 2 3 3 3 3 3'
+    all_product = list(map(int, s.split()))
+    price_of_1 = set(all_product)
+    dict_of_count_goods = {product: all_product.count(product) for product in price_of_1}  # {2: 7, 3: 5}
+    d = dict_of_count_goods
+    total_cost = [divmod(d.get(product), 3) + (product,) for product in price_of_1]  # [(2, 1, 2), (1, 2, 3)]
+    return sum((discount * (price * 2) + non_discount * price for discount, non_discount, price in total_cost))
 
 
 if __name__ == '__main__':
-
-
-    res1 = cycle(v.list_in)
-    res2 = filter_(v.list_in)
+    sum_of_pay('2 3 2 3 2 2 3 2 3 2 2 3')
