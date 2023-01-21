@@ -1,3 +1,4 @@
+"""Harlok"""
 from pprint import pprint
 from random import randint, choice, seed
 from operator import add, sub
