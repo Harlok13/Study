@@ -1,5 +1,5 @@
 class cList:
-    def init(self, cType):
+    def __init__(self, cType):
         self.cType = cType
 
     def check(self, values):
