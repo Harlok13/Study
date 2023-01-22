@@ -1,1 +1,1 @@
-import timeit
+print(ord('ъ'))
