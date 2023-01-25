@@ -9,7 +9,6 @@
 int main(void)
 {
     using namespace std;
-    // здесь пишите программу
     int ar[15];
     for (int i = 0; i < 16; ++i)
         ar[i] = -1;
