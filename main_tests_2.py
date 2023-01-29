@@ -1,8 +1,5 @@
-lst_in = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+from typing import Final
 
-try:
-    while a := int(input()):
-        print(a)
-except EOFError: pass
-
-
+pi: Final = 3.14
+pi = 1.2
+print(pi)
