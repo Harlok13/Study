@@ -9,8 +9,8 @@ cross_count = 0
 
 
 def new_game():
-    for row in range(3):
-        for col in range(3):
+    for row in range(5):
+        for col in range(5):
             field[row][col]['text'] = ' '
             field[row][col]['background'] = 'lavender'
     global game_run
@@ -19,9 +19,9 @@ def new_game():
     cross_count = 0
 
 
-for row in range(3):
+for row in range(5):
     line = []
-    for col in range(3):
+    for col in range(5):
         button = Button(root, text=' ', width=1, height=1,
                         font=('Verdana', 20, 'bold'),
                         background='lavender',

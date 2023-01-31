@@ -1,5 +1,5 @@
 from unittest import TestCase
-from librarys_modules.unittest.examples.sum_of_interval import sum_of_intervals
+from librarys_modules.unittest_.examples.sum_of_interval import sum_of_intervals
 
 
 class SumOfIntervalsTest(TestCase):
