@@ -1,23 +1,12 @@
-def replace_symbols(sentence: str,
-                    chars: str = ',.',
-                    sep: str = ' ',
-                    *,
-                    space: bool = True) -> str:
-    """
-    replaces all characters of a string
-    with the specified operator
-    """
-    import re
-    pattern = ''.join((i for i in sentence if not i.isalnum()))
-    result = re.sub(fr'[{pattern}]', sep, sentence)
-    if space:
-        return re.sub(r' +', ' ', result).rstrip()
-    return result.rstrip()
+def sum_digits(number):
+    lst = [number%10]
+    while number:
+        number //= 10
+        lst.append(number)
 
+    return sum(lst)
 
-if __name__ == '__main__':
-    assert replace_symbols('asd .f23,sdf, 9834kjasd(@*&#(Q#$NKSH(*#') == 'asd f23 sdf 9834kjasd Q NKSH'
-    assert replace_symbols('asd .f23,sdf, 9834kjasd(@*&#(Q#$NKSH(*#', space=False) == 'asd  f23 sdf  9834kjasd      Q  NKSH'
+print(sum_digits(-188))
 
 """
 def sudoku(puzzle):
