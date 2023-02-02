@@ -4,7 +4,7 @@ import re
 def split_string(sentence: str, *, sep: str = '.') -> list:
     """Делит строку по любым символам, которые не являются буквами"""
     pattern = ''.join((i for i in sentence if not i.isalpha()))
-    print(pattern)
+    print(f'{pattern=}')
     res_strng = __import__('re').sub(fr'[{pattern}]', fr'{sep}', sentence.strip(pattern))
     return res_strng.split(sep)
 

@@ -1,5 +1,26 @@
+def replace_symbols(sentence: str,
+                    chars: str = ',.',
+                    sep: str = ' ',
+                    *,
+                    space: bool = True) -> str:
+    """
+    replaces all characters of a string
+    with the specified operator
+    """
+    import re
+    pattern = ''.join((i for i in sentence if not i.isalnum()))
+    result = re.sub(fr'[{pattern}]', sep, sentence)
+    if space:
+        return re.sub(r' +', ' ', result).rstrip()
+    return result.rstrip()
+
+
+if __name__ == '__main__':
+    assert replace_symbols('asd .f23,sdf, 9834kjasd(@*&#(Q#$NKSH(*#') == 'asd f23 sdf 9834kjasd Q NKSH'
+    assert replace_symbols('asd .f23,sdf, 9834kjasd(@*&#(Q#$NKSH(*#', space=False) == 'asd  f23 sdf  9834kjasd      Q  NKSH'
+
+"""
 def sudoku(puzzle):
-    """return the solved puzzle as a 2d array of 9 x 9"""
     su = Sudoku(puzzle)
     su.board_solve()
     return su.table
@@ -53,3 +74,4 @@ class Sudoku:
                         if len(self.possible_board_list[row][col]) == 1:
                             self.table[row][col] = self.possible_board_list[row][col].pop()
 
+"""
