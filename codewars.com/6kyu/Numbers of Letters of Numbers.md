@@ -14,7 +14,7 @@ numbersOfLetters(1) --> ["one", "three", "five", "four"]
 
 # Solution
 
-```
+```python
 NUM = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
 def numbers_of_letters(n):

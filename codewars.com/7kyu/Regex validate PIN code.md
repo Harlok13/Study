@@ -13,7 +13,7 @@ If the function is passed a valid PIN string, return true, else return false.
 
 # Solution
 
-```
+```python
 from re import fullmatch
 def validate_pin(pin):
     return bool(fullmatch(r'^([\d]{4}|[\d]{6})$', pin))
@@ -21,7 +21,7 @@ def validate_pin(pin):
 ___
 # Other Solutions
 
-```
+```python
 def validate_pin(pin):
     return len(pin) in (4, 6) and pin.isdigit()
 ```

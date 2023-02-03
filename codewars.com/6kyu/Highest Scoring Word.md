@@ -12,7 +12,7 @@ All letters will be lowercase and all inputs will be valid.
 
 # Solution
 
-```
+```python
 def high(x):
     d = {}
     for i in x.lower().split():
@@ -31,7 +31,7 @@ def high(x):
 ```
 ___
 # Other Solutions
-```
+```python
 def high(x):
     return max(x.split(), key=lambda k: sum(ord(c) - 96 for c in k))
 ```

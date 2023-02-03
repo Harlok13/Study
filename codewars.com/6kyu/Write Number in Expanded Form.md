@@ -10,7 +10,7 @@ NOTE: All numbers will be whole numbers greater than 0.
 
 # Solution
 
-```
+```python
 def expanded_form(num):
     lst = reversed(list(str(num)))
     fil = filter(lambda x: x != '0', [str(int(v) * (1, 10 ** k)[k>0]) for k, v in enumerate(lst)])

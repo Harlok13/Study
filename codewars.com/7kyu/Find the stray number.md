@@ -14,7 +14,7 @@ The input array will always be valid! (odd-length >= 3)
 
 # Solution
 
-```
+```python
 def stray(arr):
     res = __import__('collections').Counter(arr)
     a = [k for k, v in res.items() if v == 1]
@@ -23,7 +23,7 @@ def stray(arr):
 ___
 # Other Solutions
 
-```
+```python
 def stray(arr):
     return min(arr, key=arr.count)
 ```

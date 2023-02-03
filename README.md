@@ -10,6 +10,7 @@
 Будет добавлено содержание, выстроена структура репозитория
 
 Пока что большинство файлов висит в корне проекта
+* [Краткая документация по pytest](librarys_modules/pytest_/README.md)
 
 ### Ссылка на стандартную библиотеку Python:
 [The Python Standard Library](https://docs.python.org/3/library/index.html)
@@ -23,5 +24,5 @@
 ### Линтеры
 [Linter](https://habr.com/ru/company/oleg-bunin/blog/433480/)
 
-### Краткая документация по pytest
-`librarys_modules/pytest_/README.md`
+
+

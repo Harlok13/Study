@@ -16,7 +16,7 @@ Write a function that will return the count of distinct case-insensitive alphabe
 
 # Solution
 
-```
+```python
 from collections import Counter
 def duplicate_count(text):
     return len([i for i in Counter(text.lower()).values() if int(i) > 1])
@@ -24,7 +24,7 @@ def duplicate_count(text):
 ___
 # Other Solutions
 
-```
+```python
 def duplicate_count(s):
   return len([c for c in set(s.lower()) if s.lower().count(c)>1])
 ```

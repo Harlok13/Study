@@ -13,14 +13,14 @@ There will always be only one integer that appears an odd number of times.
 
 # Solution
 
-```
+```python
 def find_it(seq):
     return [i for i in seq if seq.count(i) & 1][0]
 ```
 ___
 # Other Solutions
 
-```
+```python
 import operator
 
 def find_it(xs):

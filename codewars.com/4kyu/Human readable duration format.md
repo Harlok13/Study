@@ -29,7 +29,7 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 # Solution
 
-```
+```python
 def format_duration(sec):
     t = __import__('time').gmtime(sec)
     y, d, h, m, s = t.tm_year - 1970, t.tm_yday, t.tm_hour, t.tm_min, t.tm_sec
@@ -53,7 +53,7 @@ def format_duration(sec):
 ```
 ___
 # Other Solutions
-```
+```python
 times = [("year", 365 * 24 * 60 * 60), 
          ("day", 24 * 60 * 60),
          ("hour", 60 * 60),
@@ -77,7 +77,7 @@ def format_duration(seconds):
 
     return ', '.join(chunks[:-1]) + ' and ' + chunks[-1] if len(chunks) > 1 else chunks[0]
 ```
-```
+```python
 def format_duration(s):
     dt = []
     for b, w in [(60, 'second'), (60, 'minute'), (24, 'hour'), (365, 'day'), (s+1, 'year')]:

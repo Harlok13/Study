@@ -26,7 +26,7 @@ The ball can only be seen if the height of the rebounding ball is strictly great
 
 # Solution
 
-```
+```python
 def bouncing_ball(h, bounce, window):
     if  h > 0 and window < h and 0 < bounce < 1:   
         res = 1

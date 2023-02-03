@@ -21,14 +21,14 @@ cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 waiting
 
 # Solution
 
-```
+```python
 def enough(cap, on, wait):
     return 0 if cap - on - wait > 0 else abs(cap - on - wait)
 ```
 ___
 # Other Solutions
 
-```
+```python
 def enough(cap, on, wait):
     return max(0, wait - (cap - on))
 ```

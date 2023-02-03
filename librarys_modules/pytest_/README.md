@@ -169,3 +169,4 @@ test_three.py::test_member_access PASSED
 с одним из и т. д.
 
 #### -x, --exitfirst
+

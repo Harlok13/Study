@@ -10,7 +10,7 @@ two_sum([1, 2, 3], 4) # returns [0, 2] or [2, 0]
 
 # Solution
 
-```
+```python
 def two_sum(numbers, target):
     d = {}
     for key, value in enumerate(numbers):

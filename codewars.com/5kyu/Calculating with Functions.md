@@ -17,7 +17,7 @@ six(divided_by(two())) # must return 3
 
 # Solution
 
-```
+```python
 def calculate_expression(func):
     operands = {'plus': '+', 'minus': '-', 'times': '*', 'divided_by': '/'}
 

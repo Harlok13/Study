@@ -10,7 +10,7 @@ array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
 # Solution
 
-```
+```python
 def index(array, n):
     return array[n] ** n if len(array) -1 >= n else -1
 ```

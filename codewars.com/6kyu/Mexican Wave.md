@@ -21,13 +21,13 @@ wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
 # Solution
 
-```
+```python
 def wave(people):
     return [people[:k] + v.upper() + ('', people[k+1:])[k != len(people)] for k, v in enumerate(people) if v != ' ']
 ```
 ___
 # Other Solutions
-```
+```python
 def wave(s):
     return [s[:i].lower() + s[i:].capitalize() for i in range(len(s)) if s[i] != " "]
 ```

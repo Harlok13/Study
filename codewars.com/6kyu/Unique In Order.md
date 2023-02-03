@@ -9,7 +9,7 @@ unique_in_order((1, 2, 2, 3, 3))   == [1, 2, 3]
 ```
 
 # Solution
-```
+```python
 def unique_in_order(sequence):
     last, res_lst = None, []
     for item in sequence:
@@ -21,14 +21,14 @@ def unique_in_order(sequence):
 ___
 ___
 # Other Solutions
-```
+```python
 from itertools import groupby
 
 def unique_in_order(iterable):
     return [k for (k, _) in groupby(iterable)]
 ```
 ___
-```
+```python
 def unique_in_order(iterable):
     return [ ch for i, ch in enumerate(iterable) if i == 0 or ch != iterable[i - 1] ]
 ```

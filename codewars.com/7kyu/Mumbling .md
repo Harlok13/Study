@@ -10,7 +10,7 @@ The parameter of accum is a string which includes only letters from a..z and A..
 
 # Solution
 
-```
+```python
 def accum(s):
     return '-'.join((a * i).title() for i, a in enumerate(s, 1))
 ```

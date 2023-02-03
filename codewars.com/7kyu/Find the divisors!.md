@@ -9,7 +9,7 @@ divisors(13); #should return "13 is prime"
 
 # Solution
 
-```
+```python
 def divisors(integer):
     x = [i for i in range(2, integer) if not integer % i] 
     if len(x) > 0: return x
@@ -18,7 +18,7 @@ def divisors(integer):
 ___
 # Other Solutions
 
-```
+```python
 def divisors(n):
     return [i for i in xrange(2, n) if not n % i] or '%d is prime' % n
 ```

@@ -14,7 +14,7 @@ The function should return result of numbers after applying the chosen operation
 ```
 
 # Solution
-```
+```python
 # danger
 def basic_op(operator, value1, value2): 
     return eval(f'{value1}{operator}{value2}')
@@ -22,11 +22,11 @@ def basic_op(operator, value1, value2):
 ___
 # Other Solutions
 
-```
+```python
 def basic_op(o, a, b):
     return {'+':a+b,'-':a-b,'*':a*b,'/':a/b}.get(o)
 ```
-```
+```python
 def basic_op(operator, value1, value2):
     ops = {'+': lambda a, b: a + b, 
            '-': lambda a, b: a - b,
@@ -34,14 +34,14 @@ def basic_op(operator, value1, value2):
            '/': lambda a, b: a / b}
     return ops[operator](value1, value2)
 ```
-```
+```python
 from operator import add, div, mul, sub
 
 
 def basic_op(op, a, b):
     return {'+': add, '/': div, '*': mul, '-': sub}[op](a, b)
 ```
-```
+```python
 def basic_op(operator, value1, value2):
     if operator=='+':
         return value1+value2

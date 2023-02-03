@@ -11,7 +11,7 @@ With list [20,37,20,21] and number 1, the result would be [20,37,21].
 
 # Solution
 
-```
+```python
 def delete_nth(order,max_e):
     lst_res = []
     for i in order:
@@ -22,7 +22,7 @@ def delete_nth(order,max_e):
 ___
 # Other Solutions
 
-```
+```python
 def delete_nth(order,max_e):
     return [o for i,o in enumerate(order) if order[:i].count(o)<max_e ]
 ```

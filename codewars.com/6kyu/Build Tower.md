@@ -22,7 +22,7 @@ And a tower with 6 floors looks like this:
 
 # Solution
 
-```
+```python
 def tower_builder(n):
     return [('*' + '*' * (2 * k)).center(n*2-1, ' ') for k, v in enumerate(range(n))]
 ```

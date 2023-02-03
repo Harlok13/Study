@@ -6,7 +6,7 @@ Please note that using encode is considered cheating.
 
 # Solution
 
-```
+```python
 def rot13(message):
     rot13 = str.maketrans('ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz',
     'NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm')

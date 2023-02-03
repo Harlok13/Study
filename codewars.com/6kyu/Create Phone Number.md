@@ -12,7 +12,7 @@ Don't forget the space after the closing parentheses!
 
 # Solution
 
-```
+```python
 def create_phone_number(n):
     k = list(map(str, n))
     return f'({"".join(k[:3])}) {"".join(k[3:6])}-{"".join(k[6:])}'
@@ -20,7 +20,7 @@ def create_phone_number(n):
 ___
 # Other Solutions
 
-```
+```python
 def create_phone_number(n):
 	return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
 ```

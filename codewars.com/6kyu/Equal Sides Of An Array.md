@@ -31,7 +31,7 @@ If you are given an array with multiple answers, return the lowest correct index
 
 # Solution
 
-```
+```python
 def find_even_index(arr):
     res = [k for k, v in enumerate(arr) if sum(arr[:k]) == sum(arr[k+1:])]
     return res[0] if res else -1

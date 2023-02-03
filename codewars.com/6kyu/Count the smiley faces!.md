@@ -23,7 +23,7 @@ In case of an empty array return 0. You will not be tested with invalid input (i
 
 # Solution
 
-```
+```python
 from re import fullmatch
 
 

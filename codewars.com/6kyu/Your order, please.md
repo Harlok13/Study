@@ -13,7 +13,7 @@ If the input string is empty, return an empty string. The words in the input Str
 
 # Solution
 
-```
+```python
 def order(sentence):
     separator = [j for i in sentence.split()
                  for j in i if j.isdigit()]
@@ -23,7 +23,7 @@ def order(sentence):
 ___
 # Other Solutions
 В `key` сортируется по юникоду
-```
+```python
 def order(words):
   return ' '.join(sorted(words.split(), key=lambda w:sorted(w)))
 ```

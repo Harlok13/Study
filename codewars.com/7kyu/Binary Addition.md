@@ -11,21 +11,21 @@ The binary number returned should be a string.
 
 # Solution
 
-```
+```python
 def add_binary(a,b):
     return bin(a + b)[2:]
 ```
 ___
 # Other Solutions
-```
+```python
 def add_binary(a,b):
     return f"{a + b:b}"
 ```
-```
+```python
 def add_binary(a, b):
     return format(a + b, 'b')
 ```
-```
+```python
 def add_binary(a,b):
     return '{0:b}'.format(a + b)
 ```

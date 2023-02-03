@@ -43,7 +43,7 @@ Tests with large intervals
 Your algorithm should be able to handle large intervals. All tested intervals are subsets of the range [-1000000000, 1000000000].
 
 # Solution
-```
+```python
 def sum_of_intervals(intervals):
     res, last = 0, float('-inf')
     for a, b in sorted(intervals):
@@ -57,7 +57,7 @@ def sum_of_intervals(intervals):
 ___
 # Other Solutions
 
-```
+```python
 def sum_of_intervals(intervals):
    
 

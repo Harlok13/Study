@@ -14,7 +14,7 @@ The array will always contain letters in only one case.
 (Use the English alphabet with 26 letters!)
 
 # Solution
-```
+```python
 def find_missing_letter(chars):
     d = {}
     for i in chars:
@@ -27,22 +27,22 @@ def find_missing_letter(chars):
 ```
 ___
 # Other Solutions
-```
+```python
 def find_missing_letter(chars):
     n = 0
     while ord(chars[n]) == ord(chars[n+1]) - 1:
         n += 1
     return chr(1+ord(chars[n]))
 ```
-```
+```python
 def find_missing_letter(c):
     return next(chr(ord(c[i])+1) for i in range(len(c)-1) if ord(c[i])+1 != ord(c[i+1]))
 ```
-```
+```python
 def find_missing_letter(chars):
     return [chr(n) for n in range(ord(chars[0]),ord(chars[-1])+1) if n not in [ord(c) for c in chars]][0]
 ```
-```
+```python
 def find_missing_letter(chars):
     return set(chr(i) for i in range(ord(chars[0]), ord(chars[-1]) + 1)).difference(set(chars)).pop()
 ```

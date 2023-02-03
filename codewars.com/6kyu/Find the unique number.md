@@ -11,7 +11,7 @@ The tests contain some very huge arrays, so think about performance.
 
 # Solution
 
-```
+```python
 def find_uniq(arr):
     a, b = set(arr)
     return a if arr.count(a) == 1 else b

@@ -8,14 +8,14 @@ Write a code that gives out the total amount for different days(d).
 
 # Solution
 
-```
+```python
 def rental_car_cost(d):
     return d * 40 - (0, 50)[d >= 7] - (0, 20)[7 > d > 3]
 ```
 ___
 # Other Solutions
 
-```
+```python
 def rental_car_cost(d):
     return 40 * d - ((50, 20)[d < 7], 0)[d < 3]
 ```

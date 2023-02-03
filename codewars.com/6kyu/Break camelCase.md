@@ -9,7 +9,7 @@ Example
 ```
 # Solution
 
-```
+```python
 """
 at least some ideas how to solve it...
 """
@@ -27,16 +27,16 @@ def solution(s: str) -> str:
 ___
 # Other Solutions
 
-```
+```python
 import re
 def solution(s):
     return re.sub('([A-Z])', r' \1', s)
 ```
-```
+```python
 def solution(s):
     return ''.join(i if i.islower() else ' ' + i for i in s)
 ```
-```
+```python
 def solution(s):
     return ''.join(' ' + c if c.isupper() else c for c in s)
 ```

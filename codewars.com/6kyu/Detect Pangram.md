@@ -7,7 +7,7 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 
 # Solution
 
-```
+```python
 def is_pangram(s):
     for i in 'qwertyuiopasdfghjklzxcvbnm':
         if i in set(s.lower()): pass

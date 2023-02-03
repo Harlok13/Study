@@ -13,7 +13,7 @@ Assertion messages may be unclear about what they display in some languages. If 
 
 # Solution
 
-```
+```python
 def duplicate_encode(word):
     return ''.join([")" if word.lower().count(i) > 1 else "(" for i in word.lower()])
 ```

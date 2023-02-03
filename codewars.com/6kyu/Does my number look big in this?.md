@@ -14,7 +14,7 @@ Error checking for text strings or other invalid inputs is not required, only va
 
 # Solution
 
-```
+```python
 def narcissistic(value):
     return sum((pow(int(i), len(str(value))) for i in str(value))) == value
 ```

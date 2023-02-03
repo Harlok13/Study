@@ -4,7 +4,7 @@ What if the string is empty? Then the result should be empty object literal, {}.
 
 # Solution
 
-```
+```python
 from collections import Counter
 
 def count(string):

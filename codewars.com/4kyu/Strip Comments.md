@@ -24,7 +24,7 @@ result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", 
 
 # Solution
 
-```
+```python
 def strip_comments(strng, markers=None):
     sentences = strng.split('\n')
     for marker in markers:
@@ -34,17 +34,17 @@ def strip_comments(strng, markers=None):
 ___
 ___
 # OtherSolutions
-```
+```python
 solution=lambda t,m,r=__import__('re'):r.sub(r'( *[{}].*)'.format(r.escape(''.join(m))),'',t)if m else t
 ```
 ___
-```
+```python
 import re
 def solution(string, markers):
     return string if not markers else re.sub(f" *[{re.escape(''.join(markers))}].*", "", string, re.MULTILINE)
 ```
 ___
-```
+```python
 def strip_comments(strng, markers):
     for num, marker in enumerate(markers):
         strng = '\n'.join([i.split(marker)[0].rstrip() for i in strng.split('\n')])

@@ -6,13 +6,13 @@ Note: The function accepts an integer and returns an integer
 
 # Solution
 
-```
+```python
 def square_digits(num):
     return int(''.join(map(str, (map(lambda x: pow(int(x), 2), list(str(num)))))))
 ```
 ___
 # Other Solutions
-```
+```python
 def square_digits(num):
     return int(''.join(str(int(d)**2) for d in str(num)))
 ```
