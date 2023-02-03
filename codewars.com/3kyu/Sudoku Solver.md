@@ -28,6 +28,6 @@ sudoku(puzzle)
 ```
 
 # Solution
-```
+```python
 
 ```
