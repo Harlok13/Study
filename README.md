@@ -22,3 +22,6 @@
 
 ### Линтеры
 [Linter](https://habr.com/ru/company/oleg-bunin/blog/433480/)
+
+### Краткая документация по pytest
+`librarys_modules/pytest_/README.md`
