@@ -22,7 +22,7 @@ INITIAL_STAMP = {
 def generate_stamp(previous_value):
     score_changed = random.random() > 1 - PROBABILITY_SCORE_CHANGED
     home_score_change = 1 if score_changed and random.random() > 1 - \
-        PROBABILITY_HOME_SCORE else 0
+                             PROBABILITY_HOME_SCORE else 0
     away_score_change = 1 if score_changed and not home_score_change else 0
     offset_change = math.floor(random.random() * OFFSET_MAX_STEP) + 1
 
@@ -45,29 +45,14 @@ def generate_game():
     return stamps
 
 
-
-
 def get_score(game_stamps, offset):
     '''
         Takes list of game's stamps and time offset for which returns the scores for the home and away teams.
         Please pay attention to that for some offsets the game_stamps list may not contain scores.
     '''
-    target = offset
-    length_game_stamps = len(game_stamps)
-    left = game_stamps[:length_game_stamps // 2]
-    right = game_stamps[length_game_stamps // 2:]
-    current_value = game_stamps[length_game_stamps // 2]
-    while current_value['offset'] != target:
-        if current_value['offset'] < target:
-            left = right[:len(right) // 2]
-            right = right[len(right) // 2:]
-            current_value = game_stamps[right[0]]
-        else:
-            right = left[len(left) // 2:]
-            left = left[:len(left) // 2]
-            current_value = game_stamps[right[0]]
+    indx = get_offset(game_stamps, offset)
 
-    return current_value['home'], current_value['away']
+    return game_stamps[indx]['score']['home'], game_stamps[indx]['score']['away']
 
 
 def get_offset(game_stamps, target):
@@ -82,12 +67,17 @@ def get_offset(game_stamps, target):
             if target < game_stamps[mid]['offset']:
                 last = mid - 1
             else:
-                last = mid + 1
+                first = mid + 1
+    else:
+        if first > last:
+            return last
+    return indx
+
 
 game_stamps = generate_game()
 
-pprint(game_stamps)
-# print(get_score(game_stamps, 45788))
-
 if __name__ == '__main__':
     pprint(game_stamps)
+    print(get_score(game_stamps, 54898), 'score'.rjust(14))
+    print(get_offset(game_stamps, 54898), 'indx'.rjust(15))
+    print(game_stamps[get_offset(game_stamps, 54898)]['offset'], 'offset'.rjust(15))
