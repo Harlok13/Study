@@ -10,7 +10,10 @@
 Будет добавлено содержание, выстроена структура репозитория
 
 Пока что большинство файлов висит в корне проекта
-* [Краткая документация по pytest](librarys_modules/pytest_/README.md)
+### Мои записи по книге Briann Okken - Python Testing with pytest
+* __[Краткая документация по pytest](librarys_modules/pytest_/README.md)__
+
+## Полезные ссылки на сторонние ресурсы:
 
 ### Ссылка на стандартную библиотеку Python:
 [The Python Standard Library](https://docs.python.org/3/library/index.html)
