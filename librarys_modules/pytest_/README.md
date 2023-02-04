@@ -1,6 +1,6 @@
 # По книге Briann Okken - Python Testing with pytest
- **[`Запуск тестов`](https://github.com/Harlok13/Study/blob/main/librarys_modules/pytest_/README.md#Запуск-тестов:)**
- **[`Названия для тестов`](https://github.com/Harlok13/Study/blob/main/librarys_modules/pytest_/README.md#Какими-должны-быть-названия,-чтобы-pytest-обнаруживал-тесты:)**
+ **[`Запуск тестов`](https://github.com/Harlok13/Study/blob/main/librarys_modules/pytest_/README.md#запуск-тестов:)**
+ **[`Названия для тестов`](https://github.com/Harlok13/Study/blob/main/librarys_modules/pytest_/README.md#какими-должны-быть-названия-чтобы-pytest-обнаруживал-тесты:)**
 
 ## Запуск тестов:
 Весь путь в примерах указывается относительно текущего местоположения\
