@@ -17,12 +17,8 @@ def get_prime_numbers(number):
         while number % pr == 0:
             primfac.append(pr)
             number = number / pr
-        i = pr + 1
+        pr = pr + 1
     if number > 1:
         primfac.append(int(number))
     return primfac
 
-
-if __name__ == '__main__':
-    print(get_prime_numbers(86240))
-    print(prime_factors(86240))

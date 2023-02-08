@@ -29,7 +29,7 @@ def get_prime_numbers(number):
         while number % pr == 0:
             primfac.append(pr)
             number = number / pr
-        i = pr + 1
+        pr = pr + 1
     if number > 1:
         primfac.append(int(number))
     return primfac

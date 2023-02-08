@@ -1,3 +1,4 @@
+import operator
 import sys
 from pprint import pprint
 
@@ -8,7 +9,29 @@ print(a := CustomCycle.CustomCycle([1, 2, 3]))
 
 # print(sub_examples.split_string('sdf,sdf;'))
 # sub_examples.sub_string()
+pprint(locals())
+print(operator.__eq__(4, 6))
 
+# def get_adverts(
+#         self, status=None, type=None, limit=None,
+#         offset=None, order="id", direction="abs"
+# ):
+#     """
+#     Список РК
+#     Args:
+#         order:
+#         direction:
+#     """
+#     path = "/adv/v0/adverts?"
+#
+#     args = locals()
+#     del args['self']
+#     path = '/adv/v0/adverts?'
+#     for arg, val in args.items():
+#         if arg != 'self' and val is not None:
+#             path = path + f'{arg}={val}&'
+#     path = path[:-1]
+#     return self._request(path, "GET")
 """
 def sudoku(puzzle):
     su = Sudoku(puzzle)
