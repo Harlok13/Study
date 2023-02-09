@@ -1,16 +1,19 @@
-import operator
-import sys
-from pprint import pprint
+# import operator
+# import sys
+# from pprint import pprint
+#
+# sys.path.append('/Users/macbook/PycharmProjects/Study/other')
+# pprint(sys.path)
+# import CustomCycle
+# print(a := CustomCycle.CustomCycle([1, 2, 3]))
+#
+# # print(sub_examples.split_string('sdf,sdf;'))
+# # sub_examples.sub_string()
+# pprint(locals())
+# print(operator.__eq__(4, 6))
 
-sys.path.append('/Users/macbook/PycharmProjects/Study/other')
-pprint(sys.path)
-import CustomCycle
-print(a := CustomCycle.CustomCycle([1, 2, 3]))
-
-# print(sub_examples.split_string('sdf,sdf;'))
-# sub_examples.sub_string()
-pprint(locals())
-print(operator.__eq__(4, 6))
+login, password = [input() for _ in '..']
+print(len(login) > 4 and len(password) > 8 and login != password)
 
 # def get_adverts(
 #         self, status=None, type=None, limit=None,
