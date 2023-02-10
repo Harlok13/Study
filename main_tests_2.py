@@ -11,9 +11,9 @@
 # # sub_examples.sub_string()
 # pprint(locals())
 # print(operator.__eq__(4, 6))
-
-login, password = [input() for _ in '..']
-print(len(login) > 4 and len(password) > 8 and login != password)
+#
+# login, password = [input() for _ in '..']
+# print(len(login) > 4 and len(password) > 8 and login != password)
 
 # def get_adverts(
 #         self, status=None, type=None, limit=None,
