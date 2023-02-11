@@ -48,7 +48,6 @@ class BinaryTree(object):
         return [x[1] for x in lst_of_nodes]
 
     def tree_by_levels_depth(self, depth, node, lst_of_nodes):
-
         depth += 1
         lst_of_nodes.append([depth, node.value])
         if node:

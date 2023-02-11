@@ -120,11 +120,16 @@ class BinaryTree(object):
         """Helper method - use this to create a
         recursive search solution."""
 
-        if start:
-            if find_val == start.value:
+        if start is not None:
+            if start.value == find_val:
                 return True
 
+
             self.preorder_search(start.left, find_val)
+            if find_val == start.value:
+                return True
+            else:
+                return False
             self.preorder_search(start.right, find_val)
 
         # Set up tree
@@ -141,3 +146,8 @@ tree.root.left.right = Node(5)
 print(tree.search(4))
 # Should be False
 print(tree.search(6))
+
+
+         1
+      2      3
+   4     5
