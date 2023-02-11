@@ -91,3 +91,53 @@ class Sudoku:
                             self.table[row][col] = self.possible_board_list[row][col].pop()
 
 """
+
+
+class Node(object):
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+class BinaryTree(object):
+    def __init__(self, root):
+        self.root = Node(root)
+        self.nods = []
+
+    def search(self, find_val):
+        """Return True if the value
+        is in the tree, return
+        False otherwise."""
+        current = self.root
+
+        if self.preorder_search(current, find_val):
+            return True
+        else:
+            return False
+
+    def preorder_search(self, start, find_val):
+        """Helper method - use this to create a
+        recursive search solution."""
+
+        if start:
+            if find_val == start.value:
+                return True
+
+            self.preorder_search(start.left, find_val)
+            self.preorder_search(start.right, find_val)
+
+        # Set up tree
+
+
+tree = BinaryTree(1)
+tree.root.left = Node(2)
+tree.root.right = Node(3)
+tree.root.left.left = Node(4)
+tree.root.left.right = Node(5)
+
+# Test search
+# Should be True
+print(tree.search(4))
+# Should be False
+print(tree.search(6))
