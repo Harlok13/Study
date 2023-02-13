@@ -93,8 +93,8 @@ tree.root.left.right = Node(5)
 print(tree.search(4))
 # Should be False
 print(tree.search(6))
-
-
-         1
-      2      3
-   4     5
+   #
+   #
+   #       1
+   #    2      3
+   # 4     5
