@@ -13,6 +13,12 @@
 ### Мои записи по книге Briann Okken - Python Testing with pytest
 * __[Краткая документация по pytest](librarys_modules/pytest_/README.md)__
 
+### Мои справочники по модулям и библиотекам:
+* __[socket](librarys_modules/socket_/README.md)__
+* __[random](librarys_modules/random_/README.md)__
+* __[operator](librarys_modules/operator_/README.md)__
+* __[itertools](librarys_modules/itertools_/README.md)__
+
 ## Полезные ссылки на сторонние ресурсы:
 
 ### Ссылка на стандартную библиотеку Python:
