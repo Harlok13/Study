@@ -31,3 +31,6 @@ style(csv): исправление форматирования в bin/csv2json
 ## Credits
 
 Взято из github пользователя __[`Voko`](https://gist.github.com/Aleksey-Voko)__
+
+## Дополнительно (p.s. сторонний ресурс)
+* [Правила написания коммитов](https://habr.com/ru/post/416887/)
