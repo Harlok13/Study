@@ -10,6 +10,9 @@
 Будет добавлено содержание, выстроена структура репозитория
 
 Пока что большинство файлов висит в корне проекта
+### Правила оформления комментариев к коммитам
+* __[Commit naming](other/commit_naming.md)__
+
 ### Мои записи по книге Briann Okken - Python Testing with pytest
 * __[Краткая документация по pytest](librarys_modules/pytest_/README.md)__
 
