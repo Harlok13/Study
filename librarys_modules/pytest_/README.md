@@ -37,9 +37,21 @@
 **[`A Single Test Method of a Test Class`](#a-single-test-method-of-a-test-class)**__,__
 **[`Набор тестов на основе базового имени теста`](#набор-тестов-на-основе-базового-имени-теста)**
 
-**[`Параметризованное тестирование`](#параметризованное-тестирование)**__:__\
+**[`Параметризованное тестирование`](#параметризованное-тестирование)**__:__
 **[`Параметризация с одним параметром`](#параметризация-с-одним-параметром)**__,__\
 **[`Параметризация с несколькими параметрами`](#параметризация-с-несколькими-параметрами)**__,__
+**[`Параметризация переменной`](#параметризация-переменной)**__,__
+**[`Параметр ids для parametrize`](#параметр-ids-для-parametrize)**__,__
+**[`Параметризация в классах`](#параметризация-в-классах)**__,__
+**[`Идентификация параметров`](#идентификация-параметров)**
+
+**[`Fixtures`](#fixtures)**__:__
+**[`Обмен Fixtures через conftest`](#обмен-fixtures-через-conftest)**__,__
+**[`Использование Fixtures вместо Setup и Teardown`](#использование-fixtures-вместо-setup-и-teardown)**__,__
+**[`Трассировка Fixture Execution с setup show`](#трассировка-fixture-execution-с-setup-show)**__,__
+**[`Использование Fixtures для Test Data`](#использование-fixtures-для-test-data)**__,__
+**[`Использование Multiple Fixtures`](#использование-multiple-fixtures)**__,__
+
 
 ___
 
@@ -52,6 +64,9 @@ ___
 локальными ссылками в разделах.\
 Для быстрого ориентирования в каждом разделе предусмотрена ссылка,
 возвращающая к оглавлению.
+
+![](../../img/br_okken_pytest.png)
+
 ___
 
 ## Запуск тестов:
@@ -74,6 +89,7 @@ ___
 - Одиночные классы. [Читать подробнее](#одиночный-test-class)
 - Одиночные функции из класса. [Читать подробнее](#a-single-test-method-of-a-test-class)
 - Одиночные функции. [Читать подробнее](#одиночная-тестовая-функция)
+- Одиночные функции по названию с помощью флага `-k`. [Читать подробнее](#2)
 - Одиночные параметры у параметризованной функции. [Читать подробнее](#параметризация-с-несколькими-параметрами)
 - Набор тестов на основе базового имени теста. [Читать подробнее](#набор-тестов-на-основе-базового-имени-теста)
 - Набор тестов на основе маркеров. [Читать подробнее](#marking-test-functions)
@@ -1280,3 +1296,437 @@ test_add_variety.py::TestAdd::test_valid_id[Task(exercise,BrIaN,False)] PASSED
 
 ???
 
+## Fixtures
+
+Fixtures — это функции, выполняемые `pytest` до (а иногда и после)
+фактических тестовых функций.
+
+**Где используется:**
+
+- Получить набор данных для тестирования.
+- Получить систему в известном состоянии перед запуском теста.
+- Получить данные для нескольких тестов.
+
+Простой пример фикстуры, который возвращает число:
+
+```python
+import pytest
+
+
+@pytest.fixture()
+def some_data():
+    """Return answer to ultimate question."""
+    return 42
+
+
+def test_some_data(some_data):
+    """Use fixture return value in a test."""
+    assert some_data == 42
+```
+
+Декоратор `@pytest.fixture()` используется, чтобы сообщить `pytest`, что функция
+является фикстурой.\
+Когда вы включаете имя фикстуры в список параметров тестовой функции,
+`pytest` знает, как запустить её перед запуском теста. Фикстуры могут
+выполнять работу, а могут возвращать данные в тестовую функцию.
+
+Тест `test_some_data()` имеет в качестве параметра имя фикстуры `some_data`.
+`pytest` определит это и найдет фикстуру с таким названием. Наименование
+значимо в pytest. `pytest` будет искать в модуле теста фикстуру с таким
+именем. Он также будет искать в файле `conftest.py`, если не найдет его в этом.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Обмен Fixtures через conftest:
+
+Можно поместить фикстуры в отдельные тестовые файлы, но для совместного
+использования фикстур в нескольких тестовых файлах лучше использовать файл
+`conftest.py` где-то в общем месте, централизованно для всех тестов.
+Взятые оттуда, `fixtures` могут быть использованы любым тестом.
+
+Аналогично можно иметь другие файлы `conftest.py` в подкаталогах каталога
+top tests. Если вы это сделаете, `fixtures`, определенные в этих
+низкоуровневых файлах `conftest.py`, будут доступны для тестов в этом
+каталоге и подкаталогах.
+
+Хотя `conftest.py` является модулем Python, он не должен импортироваться
+тестовыми файлами. Не импортируйте `conftest` никогда! Файл `conftest.py`
+считывается `pytest` и считается локальным плагином.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Использование Fixtures вместо Setup и Teardown:
+
+`pytest` включает в себя отличную фикстуру под названием `tmpdir`. Мы можем
+использовать её для тестирования и не должны беспокоиться о очистке.
+
+```python
+import pytest
+import tasks
+from tasks import Task
+
+
+@pytest.fixture()
+def tasks_db(tmpdir):
+    """Подключение к БД перед тестами, отключение после."""
+    # Setup : start db
+    tasks.start_tasks_db(str(tmpdir), 'tiny')
+
+    yield  # здесь происходит тестирование
+
+    # Teardown : stop db
+    tasks.stop_tasks_db()
+```
+
+Функция `fixture` запускается перед тестами, которые ее используют. Однако,
+если в функции есть `yield`, то там произойдёт остановка, контроль передастся
+тестам и выполняется следующая за `yield` строка после завершения тестов.
+Поэтому подумайте о коде над `yield` как о «setup», а о коде после `yield` как
+о «teardown». Код после `yield` «teardown» будет выполняться независимо от того,
+что происходит во время тестов.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Трассировка Fixture Execution с setup show:
+
+Если запустить тест без указания `--setup-show`, то мы не увидим результат
+работы фикстуры:
+
+```
+$ cd /path/to/code/
+$ pip install ./tasks_proj/ # если он еще не установлен
+$ cd /path/to/code/ch3/a/tasks_proj/tests/func
+$ pytest -v test_add.py -k valid_id
+===================== test session starts ======================
+collected 3 items
+test_add.py::test_add_returns_valid_id PASSED
+====================== 2 tests deselected ======================
+============ 1 passed, 2 deselected in 0.02 seconds ============
+```
+
+Тот же самый тест, но уже с `--setup-show`:
+
+```
+$ pytest  --setup-show  test_add.py -k valid_id
+============================= test session starts =============================
+
+collected 3 items / 2 deselected
+
+test_add.py
+SETUP    S tmpdir_factory
+        SETUP    F tmpdir (fixtures used: tmpdir_factory)
+        SETUP    F tasks_db (fixtures used: tmpdir)
+        func/test_add.py::test_add_returns_valid_id (fixtures used: tasks_db, 
+                tmpdir, tmpdir_factory).
+        TEARDOWN F tasks_db
+        TEARDOWN F tmpdir
+TEARDOWN S tmpdir_factory
+
+=================== 1 passed, 2 deselected in 0.18 seconds ====================
+```
+
+Наш тест находится посередине, а `pytest` обозначил часть `SETUP` и `TEARDOWN`
+для каждой фикстуры. Начиная с `test_add_returns_valid_id`, можно заметить,
+что `tmpdir` работал перед тестом. И до этого tmpdir_factory. По-видимому,
+`tmpdir` использует его как фикстуру.
+
+`F` и `S` перед именами фикстур указывают область. `F` для области действия
+и `S` для области сеанса.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Использование Fixtures для Test Data:
+
+`Fixtures` являются отличным местом хранения данных для тестирования.
+С помощью нее можно вернуть всё что угодно. Например, фикстура, возвращающая
+кортеж смешанного типа:
+
+```python
+@pytest.fixture()
+def a_tuple():
+    """Вернуть что-нибудь более интересное"""
+    return (1, 'foo', None, {'bar': 23})
+
+
+def test_a_tuple(a_tuple):
+    """Demo the a_tuple fixture."""
+    assert a_tuple[3]['bar'] == 32
+```
+
+Поскольку `test_a_tuple()` должен завершиться неудачей (23 != 32), мы увидим,
+что произойдет, когда тест с фикстурой потерпит неудачу:
+
+```
+$ cd /path/to/code/ch3
+$ pytest test_fixtures.py::test_a_tuple
+============================= test session starts =============================
+
+collected 1 item
+
+test_fixtures.py F                                                       [100%]
+
+================================== FAILURES ===================================
+________________________________ test_a_tuple _________________________________
+
+a_tuple = (1, 'foo', None, {'bar': 23})
+
+    def test_a_tuple(a_tuple):
+        """Demo the a_tuple fixture."""
+>       assert a_tuple[3]['bar'] == 32
+E       assert 23 == 32
+
+test_fixtures.py:38: AssertionError
+========================== 1 failed in 0.17 seconds ===========================
+```
+
+Вместе с разделом трассировки стека pytest отображает параметры значения
+функции, вызвавшей исключение или не прошедшей `assert`. В случае проведения
+тестов фикстуры — это параметры для теста, поэтому о них сообщается с
+помощью трассировки стека. Что произойдет, если assert (или `exception`)
+случится в `fixture`?
+
+```
+ pytest -v test_fixtures.py::test_other_data
+============================= test session starts =============================
+
+test_fixtures.py::test_other_data ERROR                                  [100%]
+
+=================================== ERRORS ====================================
+______________________ ERROR at setup of test_other_data ______________________
+
+    @pytest.fixture()
+    def some_other_data():
+        """Raise an exception from fixture."""
+        x = 43
+>       assert x == 42
+E       assert 43 == 42
+
+test_fixtures.py:21: AssertionError
+=========================== 1 error in 0.13 seconds ===========================
+```
+
+Трассировка стека правильно показывает, что `assert` произошёл в функции
+фикстуры. Кроме того, `test_other_data` сообщается не как `FAIL`, а как `ERROR`.
+Это серьёзное различие. Если тест вдруг терпит неудачу, вы знаете, что
+сбой произошел в самом тесте, а не зависит от какой-то фикстуры.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Использование Multiple Fixtures:
+
+Можно использовать специализированные фикстуры для непустых бд:
+
+```python
+# Памятка об интерфейсе Task constructor
+# Task(summary=None, owner=None, done=False, id=None)
+# summary то что требуется
+# owner и done являются необязательными
+# id задается базой данных
+
+@pytest.fixture()
+def tasks_just_a_few():
+    """Все резюме и владельцы уникальны."""
+    return (
+        Task('Write some code', 'Brian', True),
+        Task("Code review Brian's code", 'Katie', False),
+        Task('Fix what Brian did', 'Michelle', False))
+
+
+@pytest.fixture()
+def tasks_mult_per_owner():
+    """Несколько владельцев с несколькими задачами каждый."""
+    return (
+        Task('Make a cookie', 'Raphael'),
+        Task('Use an emoji', 'Raphael'),
+        Task('Move to Berlin', 'Raphael'),
+
+        Task('Create', 'Michelle'),
+        Task('Inspire', 'Michelle'),
+        Task('Encourage', 'Michelle'),
+
+        Task('Do a handstand', 'Daniel'),
+        Task('Write some books', 'Daniel'),
+        Task('Eat ice cream', 'Daniel'))
+
+
+@pytest.fixture()
+def db_with_3_tasks(tasks_db, tasks_just_a_few):
+    """Подключение БД с 3 задачами, все уникальны."""
+    for t in tasks_just_a_few:
+        tasks.add(t)
+
+
+@pytest.fixture()
+def db_with_multi_per_owner(tasks_db, tasks_mult_per_owner):
+    """Подключение БД с 9 задачами, 3 owners, с 3 задачами у каждого."""
+    for t in tasks_mult_per_owner:
+        tasks.add(t)
+```
+
+Все эти `fixtures` включают две фикстуры в свой список параметров: `tasks_db`
+и набор данных. Набор данных используется для добавления задач в базу данных.
+Теперь тесты могут использовать их, если нужно, чтобы тест начинался
+с непустой базы данных.\
+Например:
+
+```python
+def test_add_increases_count(db_with_3_tasks):
+    """Test tasks.add() должен повлиять на tasks.count()."""
+    #  GIVEN db с 3 задачами
+    #  WHEN добавляется еще одна задача
+    tasks.add(Task('throw a party'))
+
+    #  THEN счетчик увеличивается на 1
+    assert tasks.count() == 4
+```
+
+Это также демонстрирует одну из главных причин использования `fixtures`:
+чтобы сфокусировать тест на том, что вы на самом деле тестируете, а не
+на том, что вы должны были сделать, чтобы подготовиться к тесту.
+
+`assert` или `exception` в фикстуре приводит к ошибке (`ERROR`), в то врем
+я как `assert` или `exception` в тестовой функции приводит к ошибке (`FAIL`),
+что играет нам на руку, т.к. мы всегда будем знать, где произошла ошибка.
+
+Если запустить тесты, то увидим это:
+
+```
+$ cd /path/to/code/ch3/a/tasks_proj/tests/func
+$ pytest --setup-show test_add.py::test_add_increases_count
+
+============================= test session starts =============================
+
+collected 1 item
+
+test_add.py
+SETUP    S tmpdir_factory
+        SETUP    F tmpdir (fixtures used: tmpdir_factory)
+        SETUP    F tasks_db (fixtures used: tmpdir)
+        SETUP    F tasks_just_a_few
+        SETUP    F db_with_3_tasks (fixtures used: tasks_db, tasks_just_a_few)
+        func/test_add.py::test_add_increases_count (fixtures used: db_with_3_tasks, tasks_db, tasks_just_a_few, tmpdir, tmpdir_factory).
+        TEARDOWN F db_with_3_tasks
+        TEARDOWN F tasks_just_a_few
+        TEARDOWN F tasks_db
+        TEARDOWN F tmpdir
+TEARDOWN S tmpdir_factory
+
+========================== 1 passed in 0.20 seconds ===========================
+```
+
+Получили снова кучу `F`-ов и `S` для функции и области сеанса.
+
+[К оглавлению](#по-книге-briann-okken-python-testing-with-pytest)
+
+#### Спецификация областей Scope Fixture
+
+Фикстуры включают в себя необязательный параметр под названием `scope`,
+который определяет, как часто фикстура получает `setup` и `teardown`.
+Параметр scope для `@pytest.fixture()` может иметь значения функции,
+класса, модуля или сессии. Scope по умолчанию — это функция. Настройки
+`tasks_db` и все фикстуры пока не определяют область. Таким образом, они
+являются функциональными фикстурами.
+
+**Scope может принимать разные значения:**
+
+- `scope='function'`\
+  Выполняется один раз для каждой функции теста. Часть `setup` запускается
+  перед каждым тестом с помощью `fixture`. Часть teardown запускается после
+  каждого теста с использованием `fixture`. Это область используемая по
+  умолчанию, если параметр scope не указан.
+- `scope='class'`\
+  Выполняется один раз для каждого тестового класса, независимо от
+  количества тестовых методов в классе.
+- `scope='module'`\
+  Выполняется один раз для каждого модуля, независимо от того, сколько
+  тестовых функций или методов или других фикстур при использовании модуля.
+- `scope='session'`\
+  Выполняется один раз за сеанс. Все методы и функции тестирования,
+  использующие фикстуру области сеанса, используют один вызов `setup` и
+  `teardown`.
+
+А теперь демонстрация scope в действии:
+
+```python
+"""Demo fixture scope."""
+
+import pytest
+
+
+@pytest.fixture(scope='function')
+def func_scope():
+    """A function scope fixture."""
+
+
+@pytest.fixture(scope='module')
+def mod_scope():
+    """A module scope fixture."""
+
+
+@pytest.fixture(scope='session')
+def sess_scope():
+    """A session scope fixture."""
+
+
+@pytest.fixture(scope='class')
+def class_scope():
+    """A class scope fixture."""
+
+
+def test_1(sess_scope, mod_scope, func_scope):
+    """Тест с использованием сессий, модулей и функций."""
+
+
+def test_2(sess_scope, mod_scope, func_scope):
+    """Демонстрация более увлекательна со множеством тестов."""
+
+
+@pytest.mark.usefixtures('class_scope')
+class TestSomething():
+    """Demo class scope fixtures."""
+
+    def test_3(self):
+        """Test using a class scope fixture."""
+
+    def test_4(self):
+        """Again, multiple tests are more fun."""
+```
+
+Теперь убедимся, что количество вызовов `fixture` и `setup` в паре
+с `teardown` выполняются в зависимости от области:
+
+```
+$ cd /path/to/code/ch3/
+$ pytest --setup-show test_scope.py
+============================= test session starts =============================
+
+collected 4 items
+
+test_scope.py
+SETUP    S sess_scope
+    SETUP    M mod_scope
+        SETUP    F func_scope
+        test_scope.py::test_1 (fixtures used: func_scope, mod_scope, sess_scope).
+        TEARDOWN F func_scope
+        SETUP    F func_scope
+        test_scope.py::test_2 (fixtures used: func_scope, mod_scope, sess_scope).
+        TEARDOWN F func_scope
+      SETUP    C class_scope
+        test_scope.py::TestSomething::()::test_3 (fixtures used: class_scope).
+        test_scope.py::TestSomething::()::test_4 (fixtures used: class_scope).
+      TEARDOWN C class_scope
+    TEARDOWN M mod_scope
+TEARDOWN S sess_scope
+
+========================== 4 passed in 0.11 seconds ===========================
+```
+
+Теперь в отчете отображается не только `S` и `F`, но и `C` и `M` для класса и
+модуля.\
+Область(`scope`) задается в определении фикстуры, а не в месте её вызова.
+Тестовые функции, которые используют фикстуру, не контролируют, как часто
+устанавливается(`SETUP`) и срывается(`TEARDOWN`) фикстура.
+
+Фикстуры могут зависеть только от других фикстур из той же или более
+расширенной области(scope). function scope fixture также может зависеть
+от класса, модуля и фикстур области сеанса, но в обратном порядке — никогда.
