@@ -11,3 +11,37 @@
 из кортежей.
 Количество атрибутов - степень отношения
 Количество кортежей - кардинальное число
+
+
+создание базы
+CREATE DATABASE <name>
+
+создание таблицы
+CREATE TABLE <name>
+(
+    id SERIAL PRIMARY KEY,
+    <field> <type>,
+    <field> <type>,
+    ...
+);
+
+удаление таблиц
+DROP TABLE <name>
+
+добавление данных
+INSERT INTO <name of table>
+VALUES
+(<fields>),
+(<fields>),
+...
+
+экранирование кавычек -> ''
+
+выбор всех данных
+SELECT *
+FROM <name of table>
+
+изменить таблицу 
+ALTER TABLE <name of table>
+добавление колонки
+ADD COLUMN <name of column> <type>
