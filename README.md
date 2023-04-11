@@ -37,5 +37,6 @@
 ### Линтеры
 [Linter](https://habr.com/ru/company/oleg-bunin/blog/433480/)
 
-
+### Руководство по стилю SQL
+[SQL Style Guide](https://www.sqlstyle.guide/ru/)
 
