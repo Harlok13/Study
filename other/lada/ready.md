@@ -1,23 +1,229 @@
-|Main|
-|:-:|
-|<img src="https://img.shields.io/badge/Python-%2314354c.svg?logo=Python&logoColor=white&style=flat" alt="Python" /> <img src="https://img.shields.io/badge/Django-%23092e20.svg?logo=django&logoColor=white&style=flat" alt="Django" />  <img src="https://img.shields.io/badge/Postgres-%23336791.svg?logo=postgresql&logoColor=white&style=flat" alt="Postgres" />  <img src="https://img.shields.io/badge/Linux-%23fcc624.svg?logo=linux&logoColor=white&style=flat" alt="Linux" /> <img src="https://img.shields.io/badge/git-%23d22128.svg?logo=git&logoColor=white&style=flat" alt="Git" /> <img src="https://img.shields.io/badge/HTML5-%23e34f26.svg?logo=html5&logoColor=white&style=flat" alt="HTML5" /> <img src="https://img.shields.io/badge/CSS3-%231572b6.svg?logo=css3&logoColor=white&style=flat" alt="CSS3" /> <img src="https://img.shields.io/badge/Bootstrap-%237952b3.svg?logo=bootstrap&logoColor=white&style=flat" alt="Bootstrap" />|
-|**Exploring & Using**|
-|<img src="https://img.shields.io/badge/Django-REST-ff1709?style=flat&logo=django&logoColor=white&color=ff1709&labelColor=gray" alt="DRF" /> <img src="https://img.shields.io/badge/aiogram 3-%2300ADD8.svg?style=flat&logo=telegram&logoColor=white" alt="aiogram 3" /> <img src="https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/Docker Compose-%23d22128.svg?style=flat&logo=docker&logoColor=white" alt="Dcoker Compose" /> <img src="https://img.shields.io/badge/Redis-%23a51f17.svg?logo=redis&logoColor=white&style=flat" alt="Redis" /> <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white" alt="Mongo DB" /> <img src="https://img.shields.io/badge/Celery-3DDC84.svg?style=flat&logo=celery&logoColor=white" alt="Celery" /> <img src="https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E" alt="JS" /> <img src="https://img.shields.io/badge/pytest-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="pytest" /> <img src="https://img.shields.io/badge/pydantic-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="pydantic" /> <img src="https://img.shields.io/badge/nginx-%23009639.svg?style=flat&logo=nginx&logoColor=white" alt="nginx" /> <img src="https://img.shields.io/badge/Gunicorn-%298729.svg?style=flat&logo=gunicorn&logoColor=white" alt="Gunicorn" />   <img src="https://img.shields.io/badge/Selenium-%23009639.svg?style=flat&logo=selenium&logoColor=white" alt="Selenium" />|
-|**Tools**|
-|<img src="https://img.shields.io/badge/Jupyter-%23FA0F00.svg?style=flat&logo=jupyter&logoColor=white" alt="Jupyter Notebook" /> <img src="https://img.shields.io/badge/VS%20Code-0078d7.svg?style=flat&logo=visual-studio-code&logoColor=white" alt="Visual Studio Code" /> <img src="https://img.shields.io/badge/Markdown-%23000000.svg?style=flat&logo=markdown&logoColor=white" alt="Markdown" /> <img src="https://img.shields.io/badge/Obsidian-%23483699.svg?style=flat&logo=obsidian&logoColor=white" alt="Obsidian" /> <img src="https://img.shields.io/badge/Miro-%23F2CA02.svg?style=flat&logo=miro&logoColor=black" alt="Miro" /> <img src="https://img.shields.io/badge/Colab-%23F46800.svg?style=flat&logo=googlecolab&logoColor=white" alt="Colab" /> <img src="https://img.shields.io/badge/Adobe%20Photoshop-%2331A8FF.svg?style=flat&logo=adobe%20photoshop&logoColor=white" alt="Adobe Photoshop" /> <img src="https://img.shields.io/badge/ChatGPT-%23000000.svg?style=flat&logo=openai&logoColor=white" alt="ChatGPT" />|
-|**Forgotten**|
-| <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=java&logoColor=white" alt="Java" /> <img src="https://img.shields.io/badge/Go-%2300ADD8.svg?style=flat&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white" alt="cpp"/> <img src="https://img.shields.io/badge/Matlab-%23F7A41D.svg?style=flat&logo=matlab&logoColor=white" alt="Matlab"/> <img src="https://img.shields.io/badge/Assembly-%23007ACC.svg?style=flat&logo=assembly&logoColor=white" alt="Assembly"/> <img src="https://img.shields.io/badge/Heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white" alt="Heroku" /> <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white" alt="TensorFlow" /> <img src="https://img.shields.io/badge/Keras-%23D00000.svg?style=flat&logo=Keras&logoColor=white" alt="Keras" /> <img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white" alt="Android" /> <img src="https://img.shields.io/badge/PyQt5-%298729.svg?style=flat&logo=pyqt&logoColor=white" alt="PyQt5" /> |
 
 ## Frontend
-[![My Skills](https://skillicons.dev/icons?i=angular,react,stimulsoft)](https://skillicons.dev)
+[![tech](https://skillicons.dev/icons?i=angular,react,stimulsoft)](https://skillicons.dev)
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+<a href="https://angular.io" _target="blank"><img alt="angular" src="img%2FAngular.png" width="100" /></a>
+AngularJS — JavaScript-фреймворк с открытым исходным кодом. Предназначен
+для разработки одностраничных приложений. Его цель — расширение браузерных
+приложений на основе MVC-шаблона, а также упрощение тестирования и разработки.
+ - 15.2 текущая стабильная версия
+ - LTS заканчивается 2024-05-18
+ - дата релиза 2023-02-20
+ - 16.0 последняя версия (2023-05-01)
 
-![Angular.png](img%2FAngular.png)
+<a href="https://ru.reactjs.org" _target="blank"><img alt="react" src="img%2FReact.png" width="100" /></a>
+React — JavaScript-библиотека с открытым исходным кодом для разработки 
+пользовательских интерфейсов. React разрабатывается и поддерживается Facebook,
+Instagram и сообществом отдельных разработчиков и корпораций. React может
+использоваться для разработки одностраничных и мобильных приложений.
+ - 18.2.0 текущая стабильная версия
+ - дата релиза 2022-06-14
+
+<a href="https://angular.io/" _target="blank"><img alt="stimulsoft" src="img%2FStimulsoft.png" width="100" /></a>
+Stimulsoft — производитель программного обеспечения в области Business
+Intelligence, анализа и обработки данных. Он разрабатывает инструменты
+отчетности для различных платформ, сохраняя полную совместимость между продуктами.
+- 2023.2.1 текущая версия
+- дата релиза 2023-March
+
 ___
-[![My Skills](https://skillicons.dev/icons?i=nginx,java,nodejs,wso2,swagger)](https://skillicons.dev)
 
-[![My Skills](https://skillicons.dev/icons?i=git,sonarqube)](https://skillicons.dev)
+## Backend
+[![tech](https://skillicons.dev/icons?i=nginx,java,nodejs,wso2,swagger)](https://skillicons.dev)
+
+<a href="https://angular.io/" _target="blank"><img alt="nginx" src="img%2FNGINX.png" width="100" /></a>
+NGINX — это веб-сервер и почтовый прокси, который работает под управлением
+операционных систем семейства Linux/Unix и Microsoft.
+ - 1.23.4 текущая стабильная версия
+ - дата релиза 2023-03-28
+
+<a href="https://angular.io/" _target="blank"><img alt="node.js" src="img%2FNode.js.png" width="100" /></a>
+Node или Node.js — программная платформа, основанная на движке V8, превращающая 
+JavaScript из узкоспециализированного языка в язык общего назначения. 
+ - 18.15.0 текущая стабильная версия
+ - дата релиза 2023-03-07
+ - 19.8.1 последняя версия (2023-03-15)
+
+<a href="https://angular.io/" _target="blank"><img alt="java" src="img%2FJava.png" width="100" /></a>
+Java – это многоплатформенный, объектно-ориентированный и сетецентрический язык,
+который сам по себе может использоваться как платформа. Это быстрый, безопасный 
+и надежный язык программирования для всего: от мобильных приложений и корпоративного
+ПО до приложений для работы с большими данными и серверных технологий.
+ - Java SE 20 текущая стабильная версия
+ - дата релиза 2023-03-21
+
+<a href="https://angular.io/" _target="blank"><img alt="wso2" src="img%2FWSO2.png" width="100" /></a>
+WSO2 — поставщик технологий с открытым исходным кодом, основанный в 2005 году. 
+Он предлагает корпоративную платформу для интеграции интерфейсов прикладного
+программирования, приложений и веб-служб локально и через Интернет.
+ - 4.8.0 
+ - 2023-03-22
+
+<a href="https://angular.io/" _target="blank"><img alt="swagger" src="img%2FSwagger.png" width="100" /></a>
+Swagger — это набор инструментов, который позволяет автоматически описывать API
+на основе его кода. API — интерфейс для связи между разными программными продуктами, 
+и у каждого проекта он свой. Документация, автоматически созданная через Swagger,
+облегчает понимание API для компьютеров и людей.
+
+___
+
+## Dev tools
+[![tech](https://skillicons.dev/icons?i=git,sonarqube)](https://skillicons.dev)
+
+<a href="https://angular.io/" _target="blank"><img alt="git" src="img%2FGit.png" width="100" /></a>
+Git — система управления версиями с распределенной архитектурой. 
+ - 2.40.0 текущая стабильная версия
+ - дата релиза 2023-03-12
+
+<a href="https://angular.io/" _target="blank"><img alt="azure" src="img%2Fazure.png" width="100" /></a>
+Microsoft Azure — облачная платформа компании Microsoft. Предоставляет возможность
+разработки, выполнения приложений и хранения данных на серверах, расположенных в
+распределённых дата-центрах.
+
+<a href="https://angular.io/" _target="blank"><img alt="open_source" src="img%2Fopen_source.png" width="100" /></a>
+Open Source - открытое программное обеспечение — программное обеспечение с 
+открытым исходным кодом. 
+
+<a href="https://angular.io/" _target="blank"><img alt="sonarqube" src="img%2Fsonarqube.png" width="100" /></a>
+SonarQube — платформа с открытым исходным кодом для непрерывного анализа и 
+измерения качества программного кода. Поддерживает анализ кода и поиск ошибок
+согласно правилам стандартов программирования MISRA C, MISRA C++, MITRE/CWE и CERT 
+Secure Coding Standards.
+ - 9.9 LTS текущая версия
+ - дата релиза 2023-February
+
+___
+
+## E2E Security
+
+<a href="https://angular.io/" _target="blank"><img alt="openid" src="img%2FOpenID.png" width="100" /></a>
+OpenID — открытый стандарт децентрализованной системы аутентификации, предоставляющей
+пользователю возможность создать единую учётную запись для аутентификации на множестве
+не связанных друг с другом интернет-ресурсов, используя услуги третьих лиц.
+
+<a href="https://angular.io/" _target="blank"><img alt="openssl" src="img%2Fopenssl.png" width="100" /></a>
+OpenSSL — полноценная криптографическая библиотека с открытым исходным кодом, широко
+известна из-за расширения SSL/TLS, используемого в веб-протоколе HTTPS.
+
+<a href="https://angular.io/" _target="blank"><img alt="wso2" src="img%2FWSO2.png" width="100" /></a>
+WSO2 — поставщик технологий с открытым исходным кодом, основанный в 2005 году. 
+Он предлагает корпоративную платформу для интеграции интерфейсов прикладного
+программирования, приложений и веб-служб локально и через Интернет.
+
+___
+
+## Databases
+[![tech](https://skillicons.dev/icons?i=postgres,redis)](https://skillicons.dev)
+
+<a href="https://angular.io/" _target="blank"><img alt="redis" src="img%2FRedis.png" width="100" /></a>
+Redis — резидентная система управления базами данных класса NoSQL с открытым исходным
+кодом, работающая со структурами данных типа «ключ — значение». Используется как для
+баз данных, так и для реализации кэшей, брокеров сообщений. Ориентирована на достижение
+максимальной производительности на атомарных операциях.
+ - 7.0 текущая стабильная версия
+ - дата релиза 2023-03-20
+
+
+<a href="https://angular.io/" _target="blank"><img alt="postgres" src="img%2Fpostgres.png" width="100" /></a>
+PostgreSQL — свободная объектно-реляционная система управления базами данных. Существует
+в реализациях для множества UNIX-подобных платформ, включая AIX, различные BSD-системы,
+HP-UX, IRIX, Linux, macOS, Solaris/OpenSolaris, Tru64, QNX, а также для Microsoft Windows.
+ - 15.2 текущая стабильная версия
+ - дата релиза 2022-10-13
+ - LTS заканчивается 2027-11-11
+
+___
+
+## Operations
+[![tech](https://skillicons.dev/icons?i=docker,kubernetes)](https://skillicons.dev)
+
+<a href="https://angular.io/" _target="blank"><img alt="docker" src="img%2Fdocker.png" width="100" /></a>
+Docker — программное обеспечение для автоматизации развёртывания и управления 
+приложениями в средах с поддержкой контейнеризации, контейнеризатор приложений.
+ - 20.10.23 текущая стабильная версия
+ - дата релиза 2023-01-19
+
+<a href="https://angular.io/" _target="blank"><img alt="kubernetes" src="img%2Fkubernetes.jpeg" width="100" /></a>
+Kubernetes — открытое программное обеспечение для оркестровки контейнеризированных 
+приложений — автоматизации их развёртывания, масштабирования и координации в условиях 
+кластера. Поддерживает основные технологии контейнеризации, включая Docker, rkt, также 
+возможна поддержка технологий аппаратной виртуализации. 
+ - 1.26 
+ - дата релиза 2023-01-17
+
+___
+
+## Infra
+
+<a href="https://angular.io/" _target="blank"><img alt="openstack" src="img%2FOpenStack.png" width="100" /></a>
+OpenStack — комплекс проектов свободного программного обеспечения, который может
+быть использован для создания инфраструктурных облачных сервисов и облачных хранилищ,
+при том как публичных, так и частных. Все проекты комплекса распространяются под 
+лицензией Apache License.
+
+___
+
+## Data VIS
+
+<a href="https://angular.io/" _target="blank"><img alt="tibcospotfire" src="img%2Ftibco.png" width="100" /></a>
+TIBCO Spotfire — платформа для бизнес-аналитики с функционалом обнаружения
+закономерностей и ценной информации, скрытых в больших данных, для принятия 
+аргументированных бизнес-решений.
+
+___
+
+## Data Exchange
+[![tech](https://skillicons.dev/icons?i=kafka)](https://skillicons.dev)
+
+<a href="https://angular.io/" _target="blank"><img alt="nifi" src="img%2Fnifi.png" width="100" /></a>
+Apache NiFi — это простая платформа обработки событий (сообщений), предоставляющая
+возможности управления потоками данных из разнообразных источников в режиме реального
+времени с использованием графического интерфейса.
+
+<a href="https://angular.io/" _target="blank"><img alt="wso2" src="img%2FWSO2.png" width="100" /></a>
+
+<a href="https://angular.io/" _target="blank"><img alt="apigee" src="img%2Fapigee.svg" width="100" /></a>
+Apigee - ускоряет процесс развертывания и масштабирования в несколько раз. Быстрая
+реакция и оперативность дает преимущество обладателям Apigee при работе с API.
+Основная цель Apigee — упростить работу с цифровыми технологиями и улучшить 
+взаимодействие с API.
+
+<a href="https://angular.io/" _target="blank"><img alt="kafka" src="img%2Fkafka.png" width="100" /></a>
+Kafka Apache — распределенная система обмена сообщениями между серверными приложениями 
+в режиме реального времени. Благодаря высокой пропускной способности, масштабируемости
+и надежности применяется в компаниях, работающих с большими объемами данных.
+ ___
+ 
+ ## Data Lake
+ 
+ <a href="https://angular.io/" _target="blank"><img alt="hive" src="img%2Fhive.png" width="100" /></a>
+ Hive — система управления базами данных на основе платформы Hadoop с SQL-подобным 
+ языком запросов, позволяет выполнять запросы, агрегировать и анализировать данные; 
+ компонент экосистемы Hadoop.
+ 
+ <a href="https://angular.io/" _target="blank"><img alt="jupyter" src="img%2Fjupyter.png" width="100" /></a>
+ Jupyter — интерактивный блокнот, первоначально являвшийся веб-реализацией и
+ развитием IPython, ставший самостоятельным проектом, ориентированным на работу
+ со множеством сред выполнения — не только Python, но и R, Julia, Scala и ряда других.
+ 
+ <a href="https://angular.io/" _target="blank"><img alt="postgres" src="img%2Fpostgres.png" width="100" /></a>
+ PostgreSQL — свободная объектно-реляционная система управления базами данных. Существует
+ в реализациях для множества UNIX-подобных платформ, включая AIX, различные BSD-системы,
+ HP-UX, IRIX, Linux, macOS, Solaris/OpenSolaris, Tru64, QNX, а также для Microsoft Windows.
+ - 15.2 текущая стабильная версия
+ - дата релиза 2022-10-13
+ - LTS заканчивается 2027-11-11
+ 
+ <a href="https://angular.io/" _target="blank"><img alt="python" src="img%2Fpython.png" width="100" /></a>
+ Python — высокоуровневый язык программирования общего назначения с динамической 
+ строгой типизацией и автоматическим управлением памятью, ориентированный на
+ повышение производительности разработчика, читаемости кода и его качества, а 
+ также на обеспечение переносимости написанных на нём программ.
+ 
+ <a href="https://angular.io/" _target="blank"><img alt="spark" src="img%2Fspark.png" width="100" /></a>
+ Apache Spark или просто Spark — это фреймворк (ПО, объединяющее готовые компоненты
+ большого программного проекта), который используют для параллельной обработки
+ неструктурированных или слабоструктурированных данных.
 
 
 
